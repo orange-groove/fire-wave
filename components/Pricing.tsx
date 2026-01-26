@@ -67,7 +67,7 @@ const pricingData: PricingSection[] = [
       {
         title: 'Single Release Package',
         price: '$400',
-        description: 'Track, edit, mix, and master one song (Up to 8 hours total studio time)',
+        description: 'Track, edit, mix, and master one song (Up to 8 hours total studio time). Additional studio time billed at standard hourly or session rates.',
       },
       {
         title: 'EP Package (4–6 songs)',
