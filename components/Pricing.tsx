@@ -122,7 +122,7 @@ export default function Pricing() {
                 borderColor="border.medium"
                 _hover={{
                   shadow: 'xl',
-                  borderColor: 'brand.500',
+                  borderColor: 'white',
                 }}
                 transition="all 0.3s"
               >
@@ -148,7 +148,7 @@ export default function Pricing() {
                               <Text
                                 fontSize="lg"
                                 fontWeight="bold"
-                                color="brand.500"
+                                color="white"
                                 whiteSpace="nowrap"
                                 ml={4}
                               >
@@ -164,7 +164,7 @@ export default function Pricing() {
                                   <HStack align="flex-start" spacing={2}>
                                     <ListIcon
                                       as={FaCheckCircle}
-                                      color="brand.500"
+                                      color="white"
                                       mt={1}
                                     />
                                     <Text>{bullet}</Text>

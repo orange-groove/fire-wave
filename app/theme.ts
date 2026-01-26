@@ -1,18 +1,32 @@
 import { extendTheme } from '@chakra-ui/react'
 
 const colors = {
-  // Primary brand colors - Fire Orange theme
+  // Fire accent colors - used sparingly for highlights and accents
   brand: {
     50: '#fff7ed',
     100: '#ffedd5',
     200: '#fed7aa',
     300: '#fdba74',
     400: '#fb923c',
-    500: '#f97316', // Bright fire orange
+    500: '#f97316', // Fire orange - for subtle accents only
     600: '#ea580c',
     700: '#c2410c',
     800: '#9a3412',
     900: '#7c2d12',
+  },
+  
+  // Cool accent color for contrast (fire and water)
+  accent: {
+    50: '#ecfeff',
+    100: '#cffafe',
+    200: '#a5f3fc',
+    300: '#67e8f9',
+    400: '#22d3ee',
+    500: '#06b6d4', // Cyan blue
+    600: '#0891b2',
+    700: '#0e7490',
+    800: '#155e75',
+    900: '#164e63',
   },
 
   background: {
@@ -99,14 +113,29 @@ const theme = extendTheme({
   components: {
     Button: {
       defaultProps: {
-        colorScheme: 'brand',
+        colorScheme: 'gray',
       },
       variants: {
         solid: {
-          bg: 'brand.500',
-          color: 'white',
+          bg: '#ffffff',
+          color: '#000000',
+          fontWeight: '600',
           _hover: {
-            bg: 'brand.600',
+            bg: '#f5f5f5',
+            transform: 'translateY(-1px)',
+            boxShadow: '0 4px 12px rgba(255, 255, 255, 0.15)',
+          },
+          _active: {
+            transform: 'translateY(0)',
+          },
+          transition: 'all 0.2s',
+        },
+        outline: {
+          borderColor: '#ffffff',
+          color: '#ffffff',
+          _hover: {
+            bg: 'rgba(255, 255, 255, 0.1)',
+            borderColor: '#ffffff',
           },
         },
       },
@@ -121,7 +150,8 @@ const theme = extendTheme({
         },
         _focus: {
           bg: 'background.primary',
-          borderColor: 'brand.500',
+          borderColor: 'accent.500',
+          boxShadow: '0 0 0 1px var(--chakra-colors-accent-500)',
         },
         _autofill: {
           bg: 'background.primary !important',
@@ -146,7 +176,8 @@ const theme = extendTheme({
         },
         _focus: {
           bg: 'background.primary',
-          borderColor: 'brand.500',
+          borderColor: 'accent.500',
+          boxShadow: '0 0 0 1px var(--chakra-colors-accent-500)',
         },
       },
     },

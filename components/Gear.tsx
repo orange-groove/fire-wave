@@ -36,7 +36,7 @@ export default function Gear() {
                 <List spacing={2} w="full">
                   {category.items.map((item, index) => (
                     <ListItem key={index} color="text.primary" display="flex" alignItems="center">
-                      <ListIcon as={FaCheckCircle} color="brand.500" />
+                      <ListIcon as={FaCheckCircle} color="white" />
                       {item}
                     </ListItem>
                   ))}
