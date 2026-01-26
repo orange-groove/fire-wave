@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     siteName: "Fire Wave Studios",
     images: [
       {
-        url: '/board.png',
+        url: 'https://firewave912.com/board.png',
         width: 1200,
         height: 630,
         alt: 'Fire Wave Studios',
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: "Fire Wave Studios",
     description: "Professional audio recording, mixing, and mastering services in Richmond Hill, GA",
-    images: ['/board.png'],
+    images: ['https://firewave912.com/board.png'],
   },
 };
 
