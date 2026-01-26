@@ -66,7 +66,7 @@ const pricingData: PricingSection[] = [
     items: [
       {
         title: 'Single Release Package',
-        price: '$350',
+        price: '$400',
         description: 'Track, edit, mix, and master one song (Up to 8 hours total studio time)',
       },
       {
