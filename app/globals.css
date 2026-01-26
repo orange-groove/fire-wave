@@ -39,3 +39,29 @@ a {
     color-scheme: dark;
   }
 }
+
+/* Form input styles - ensure black background always */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px #000000 inset !important;
+  -webkit-text-fill-color: #ededed !important;
+  box-shadow: 0 0 0 1000px #000000 inset !important;
+  background-color: #000000 !important;
+}
+
+input,
+textarea {
+  background-color: #000000 !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #666666 !important;
+  opacity: 1;
+}

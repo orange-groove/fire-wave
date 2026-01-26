@@ -117,7 +117,22 @@ const theme = extendTheme({
         borderColor: 'border.medium',
         color: 'text.primary',
         _placeholder: {
-          color: '#a0a0a0',
+          color: '#666666',
+        },
+        _focus: {
+          bg: 'background.primary',
+          borderColor: 'brand.500',
+        },
+        _autofill: {
+          bg: 'background.primary !important',
+          color: 'text.primary !important',
+        },
+      },
+      baseStyle: {
+        _autofill: {
+          bg: 'background.primary !important',
+          color: 'text.primary !important',
+          boxShadow: '0 0 0px 1000px #000000 inset !important',
         },
       },
     },
@@ -127,7 +142,11 @@ const theme = extendTheme({
         borderColor: 'border.medium',
         color: 'text.primary',
         _placeholder: {
-          color: '#a0a0a0',
+          color: '#666666',
+        },
+        _focus: {
+          bg: 'background.primary',
+          borderColor: 'brand.500',
         },
       },
     },
