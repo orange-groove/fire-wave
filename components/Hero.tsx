@@ -6,6 +6,7 @@ import {
   Text,
   VStack,
 } from '@chakra-ui/react'
+import Image from 'next/image'
 import Slider from 'react-slick'
 import { getContent } from '../lib/content'
 
@@ -68,25 +69,19 @@ export default function Hero() {
                 position="relative"
                 w="100%"
                 h="100vh"
-                sx={{
-                  '& img': {
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                  },
-                }}
+                overflow="hidden"
               >
-                <img
+                <Image
                   src={image}
                   alt={`Studio image ${index + 1}`}
+                  fill
+                  sizes="100vw"
                   style={{
-                    width: '100%',
-                    height: '100%',
                     objectFit: 'cover',
-                    display: 'block',
+                    objectPosition: 'center',
                   }}
-                  loading={index === 0 ? 'eager' : 'lazy'}
-                  decoding="async"
+                  priority={index === 0}
+                  quality={85}
                 />
               </Box>
             </div>

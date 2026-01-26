@@ -23,6 +23,28 @@ export const metadata: Metadata = {
     shortcut: '/logo.webp',
     apple: '/logo.webp',
   },
+  openGraph: {
+    title: "Fire Wave Studios",
+    description: "Professional audio recording, mixing, and mastering services in Richmond Hill, GA",
+    url: "https://firewave912.com",
+    siteName: "Fire Wave Studios",
+    images: [
+      {
+        url: '/board.png',
+        width: 1200,
+        height: 630,
+        alt: 'Fire Wave Studios',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Fire Wave Studios",
+    description: "Professional audio recording, mixing, and mastering services in Richmond Hill, GA",
+    images: ['/board.png'],
+  },
 };
 
 export default function RootLayout({
