@@ -6,8 +6,6 @@ import {
   Text,
   VStack,
 } from '@chakra-ui/react'
-import Image from 'next/image'
-import { useState, useEffect } from 'react'
 import Slider from 'react-slick'
 import { getContent } from '../lib/content'
 
@@ -29,16 +27,6 @@ const studioImages = [
 
 export default function Hero() {
   const content = getContent()
-  const [isLoaded, setIsLoaded] = useState(false)
-  const [isMounted, setIsMounted] = useState(false)
-
-  useEffect(() => {
-    setIsMounted(true)
-    // Trigger logo animation after component mounts
-    setTimeout(() => {
-      setIsLoaded(true)
-    }, 100)
-  }, [])
 
   const sliderSettings = {
     dots: false,
@@ -50,6 +38,10 @@ export default function Hero() {
     pauseOnHover: false,
     arrows: false,
     cssEase: 'ease-in-out',
+    lazyLoad: 'ondemand' as const,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    waitForAnimate: true,
   }
 
   return (
@@ -69,51 +61,37 @@ export default function Hero() {
         h="100%"
         zIndex={1}
       >
-        {isMounted ? (
-          <Slider {...sliderSettings}>
-            {studioImages.map((image, index) => (
-              <div key={index}>
-                <Box
-                  position="relative"
-                  w="100%"
-                  h="100vh"
-                  sx={{
-                    '& img': {
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'cover',
-                    },
+        <Slider {...sliderSettings}>
+          {studioImages.map((image, index) => (
+            <div key={image}>
+              <Box
+                position="relative"
+                w="100%"
+                h="100vh"
+                sx={{
+                  '& img': {
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                  },
+                }}
+              >
+                <img
+                  src={image}
+                  alt={`Studio image ${index + 1}`}
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    display: 'block',
                   }}
-                >
-                  <img
-                    src={image}
-                    alt={`Studio image ${index + 1}`}
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'cover',
-                      display: 'block',
-                    }}
-                    loading={index === 0 ? 'eager' : 'lazy'}
-                  />
-                </Box>
-              </div>
-            ))}
-          </Slider>
-        ) : (
-          // Fallback: show first image while slider loads
-          <Box position="relative" w="100%" h="100%">
-            <img
-              src={studioImages[0]}
-              alt="Studio image"
-              style={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover',
-              }}
-            />
-          </Box>
-        )}
+                  loading={index === 0 ? 'eager' : 'lazy'}
+                  decoding="async"
+                />
+              </Box>
+            </div>
+          ))}
+        </Slider>
       </Box>
 
       {/* Black Overlay */}
@@ -138,13 +116,7 @@ export default function Hero() {
       >
         <Container maxW="container.xl">
           <VStack spacing={8} textAlign="center">
-            <Box
-              transition="all 3s ease-in-out"
-              transform={isLoaded ? 'scale(1.1)' : 'scale(1)'}
-              overflow="visible"
-            >
-              <Text fontSize={['40px', '60px', '80px']} color="text.primary">Fire Wave Studios</Text>
-            </Box>
+            <Text fontSize={['40px', '60px', '80px']} color="text.primary">Fire Wave Studios</Text>
             <Text
               fontSize="xl"
               color="text.primary"
