@@ -30,8 +30,10 @@ const studioImages = [
 export default function Hero() {
   const content = getContent()
   const [isLoaded, setIsLoaded] = useState(false)
+  const [isMounted, setIsMounted] = useState(false)
 
   useEffect(() => {
+    setIsMounted(true)
     // Trigger logo animation after component mounts
     setTimeout(() => {
       setIsLoaded(true)
@@ -67,23 +69,51 @@ export default function Hero() {
         h="100%"
         zIndex={1}
       >
-        <Slider {...sliderSettings}>
-          {studioImages.map((image, index) => (
-            <Box key={index} position="relative" w="100%" h="100vh">
-              <Image
-                src={image}
-                alt={`Studio image ${index + 1}`}
-                fill
-                style={{
-                  objectFit: 'cover',
-                  objectPosition: 'center',
-                }}
-                priority={index === 0}
-                sizes="100vw"
-              />
-            </Box>
-          ))}
-        </Slider>
+        {isMounted ? (
+          <Slider {...sliderSettings}>
+            {studioImages.map((image, index) => (
+              <div key={index}>
+                <Box
+                  position="relative"
+                  w="100%"
+                  h="100vh"
+                  sx={{
+                    '& img': {
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                    },
+                  }}
+                >
+                  <img
+                    src={image}
+                    alt={`Studio image ${index + 1}`}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      display: 'block',
+                    }}
+                    loading={index === 0 ? 'eager' : 'lazy'}
+                  />
+                </Box>
+              </div>
+            ))}
+          </Slider>
+        ) : (
+          // Fallback: show first image while slider loads
+          <Box position="relative" w="100%" h="100%">
+            <img
+              src={studioImages[0]}
+              alt="Studio image"
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+              }}
+            />
+          </Box>
+        )}
       </Box>
 
       {/* Black Overlay */}
