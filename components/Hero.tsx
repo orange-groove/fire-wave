@@ -14,16 +14,16 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const studioImages = [
-  '/board.png',
-  '/control_room.png',
-  '/drums.png',
-  '/drums_2.png',
-  '/guitars.png',
-  '/mic.png',
-  '/room_1.png',
-  '/room_2.png',
-  '/room_3.png',
-  '/room_4.png',
+  '/board.jpg',
+  '/control_room.jpg',
+  '/drums.jpg',
+  '/drums_2.jpg',
+  '/guitars.jpg',
+  '/mic.jpg',
+  '/room_1.jpg',
+  '/room_2.jpg',
+  '/room_3.jpg',
+  '/room_4.jpg',
 ]
 
 export default function Hero() {
