@@ -84,7 +84,13 @@ export default function Footer() {
             </Text>
             <HStack color="gray.400" fontSize="sm">
               <Icon as={FaMapMarkerAlt} color="brand.500" />
-              <Text>Richmond Hill, GA</Text>
+              <Link 
+                href="https://www.google.com/maps/search/Clarktown+Road,+Richmond+Hill,+GA" 
+                isExternal
+                _hover={{ color: 'brand.500' }}
+              >
+                Richmond Hill, GA
+              </Link>
             </HStack>
             <HStack color="gray.400" fontSize="sm">
               <Icon as={FaEnvelope} color="brand.500" />

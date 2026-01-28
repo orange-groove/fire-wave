@@ -3,6 +3,8 @@
 import {
   Box,
   Container,
+  Text,
+  VStack,
 } from '@chakra-ui/react'
 import Image from 'next/image'
 import Slider from 'react-slick'
@@ -106,18 +108,30 @@ export default function Hero() {
         justifyContent="center"
       >
         <Container maxW="container.xl" display="flex" justifyContent="center">
-          <Image
-            src="/logo.png"
-            alt="Fire Wave Studios"
-            width={600}
-            height={600}
-            priority
-            style={{
-              filter: 'drop-shadow(0 4px 20px rgba(0, 0, 0, 0.5))',
-              maxWidth: '80vw',
-              height: 'auto',
-            }}
-          />
+          <VStack spacing={4}>
+            <Image
+              src="/logo.png"
+              alt="Fire Wave Studios"
+              width={600}
+              height={600}
+              priority
+              style={{
+                filter: 'drop-shadow(0 4px 20px rgba(0, 0, 0, 0.5))',
+                maxWidth: '80vw',
+                height: 'auto',
+              }}
+            />
+            <Text 
+              color="white" 
+              fontSize={{ base: 'lg', md: '2xl' }}
+              fontWeight="300"
+              letterSpacing="wider"
+              fontStyle="italic"
+              textShadow="0 2px 10px rgba(0, 0, 0, 0.5)"
+            >
+              Richmond Hill, GA
+            </Text>
+          </VStack>
         </Container>
       </Box>
     </Box>
