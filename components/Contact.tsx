@@ -113,62 +113,88 @@ export default function Contact() {
   }
 
   return (
-    <Box bg="background.primary" py={16} id="contact">
+    <Box bg="#0a0a0a" py={20} id="contact">
       <Container maxW="container.md">
         <VStack spacing={8}>
-          <Heading as="h2" size="xl" textAlign="center" color="text.primary">
+          <Heading as="h2" size="xl" textAlign="center" color="white">
             {content.contact.title}
           </Heading>
           <Box as="form" onSubmit={handleContactSubmit} w="full" maxW="lg">
             <VStack spacing={6}>
               <FormControl isRequired isInvalid={!!errors.name}>
-                <FormLabel color="text.primary">Name</FormLabel>
+                <FormLabel color="gray.300">Name</FormLabel>
                 <Input 
                   placeholder="Your name" 
                   value={formData.name}
                   onChange={(e) => handleInputChange('name', e.target.value)}
+                  bg="#141414"
+                  borderColor="gray.700"
+                  color="white"
+                  _placeholder={{ color: 'gray.500' }}
+                  _hover={{ borderColor: 'gray.600' }}
+                  _focus={{ borderColor: 'brand.500', boxShadow: '0 0 0 1px var(--chakra-colors-brand-500)' }}
                 />
                 <FormErrorMessage>{errors.name}</FormErrorMessage>
               </FormControl>
               
               <FormControl isRequired isInvalid={!!errors.email}>
-                <FormLabel color="text.primary">Email</FormLabel>
+                <FormLabel color="gray.300">Email</FormLabel>
                 <Input 
                   type="email" 
                   placeholder="your.email@example.com" 
                   value={formData.email}
                   onChange={(e) => handleInputChange('email', e.target.value)}
+                  bg="#141414"
+                  borderColor="gray.700"
+                  color="white"
+                  _placeholder={{ color: 'gray.500' }}
+                  _hover={{ borderColor: 'gray.600' }}
+                  _focus={{ borderColor: 'brand.500', boxShadow: '0 0 0 1px var(--chakra-colors-brand-500)' }}
                 />
                 <FormErrorMessage>{errors.email}</FormErrorMessage>
               </FormControl>
               
               <FormControl>
-                <FormLabel color="text.primary">Phone</FormLabel>
+                <FormLabel color="gray.300">Phone</FormLabel>
                 <Input 
                   placeholder="Your phone number" 
                   value={formData.phone}
                   onChange={(e) => handleInputChange('phone', e.target.value)}
+                  bg="#141414"
+                  borderColor="gray.700"
+                  color="white"
+                  _placeholder={{ color: 'gray.500' }}
+                  _hover={{ borderColor: 'gray.600' }}
+                  _focus={{ borderColor: 'brand.500', boxShadow: '0 0 0 1px var(--chakra-colors-brand-500)' }}
                 />
               </FormControl>
               
               <FormControl isRequired isInvalid={!!errors.message}>
-                <FormLabel color="text.primary">Message</FormLabel>
+                <FormLabel color="gray.300">Message</FormLabel>
                 <Textarea 
                   placeholder="Tell us about your project..." 
                   rows={5}
                   value={formData.message}
                   onChange={(e) => handleInputChange('message', e.target.value)}
+                  bg="#141414"
+                  borderColor="gray.700"
+                  color="white"
+                  _placeholder={{ color: 'gray.500' }}
+                  _hover={{ borderColor: 'gray.600' }}
+                  _focus={{ borderColor: 'brand.500', boxShadow: '0 0 0 1px var(--chakra-colors-brand-500)' }}
                 />
                 <FormErrorMessage>{errors.message}</FormErrorMessage>
               </FormControl>
               
               <Button 
                 type="submit" 
-                colorScheme="brand" 
                 size="lg" 
                 w="full"
                 isLoading={isSubmitting}
                 loadingText="Sending..."
+                bg="brand.500"
+                color="white"
+                _hover={{ bg: 'brand.600' }}
               >
                 Send Message
               </Button>

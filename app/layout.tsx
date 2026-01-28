@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Zilla_Slab } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
 import Nav from "../components/Nav";
@@ -13,6 +14,14 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+// Note: "Zalando Sans Expanded" doesn't appear to be available in next/font/google
+// Using Zilla Slab as an alternative expanded font, or you can add it via CSS link
+const zillaSlab = Zilla_Slab({
+  variable: "--font-display",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {

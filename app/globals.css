@@ -1,13 +1,6 @@
 :root {
   --background: #ffffff;
-  --foreground: #03040c;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #050512;
-    --foreground: #ededed;
-  }
+  --foreground: #1a1a1a;
 }
 
 html,
@@ -34,13 +27,7 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-}
-
-/* Form input styles - ensure black background always */
+/* Form input styles - dark background for autofill */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
@@ -49,19 +36,8 @@ textarea:-webkit-autofill,
 textarea:-webkit-autofill:hover,
 textarea:-webkit-autofill:focus,
 textarea:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0 1000px #000000 inset !important;
-  -webkit-text-fill-color: #ededed !important;
-  box-shadow: 0 0 0 1000px #000000 inset !important;
-  background-color: #000000 !important;
-}
-
-input,
-textarea {
-  background-color: #000000 !important;
-}
-
-input::placeholder,
-textarea::placeholder {
-  color: #666666 !important;
-  opacity: 1;
+  -webkit-box-shadow: 0 0 0 1000px #141414 inset !important;
+  -webkit-text-fill-color: #ffffff !important;
+  box-shadow: 0 0 0 1000px #141414 inset !important;
+  background-color: #141414 !important;
 }

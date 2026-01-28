@@ -98,14 +98,14 @@ const pricingData: PricingSection[] = [
 
 export default function Pricing() {
   return (
-    <Box bg="background.primary" py={16} id="pricing">
+    <Box bg="#0a0a0a" py={20} id="pricing">
       <Container maxW="container.xl">
         <VStack spacing={12}>
           <VStack spacing={4}>
-            <Heading as="h2" size="xl" textAlign="center" color="text.primary">
+            <Heading as="h2" size="xl" textAlign="center" color="white">
               Pricing
             </Heading>
-            <Text textAlign="center" color="text.secondary" maxW="2xl">
+            <Text textAlign="center" color="gray.400" maxW="2xl">
               Transparent pricing for all our services. Contact us for custom quotes or special arrangements.
             </Text>
           </VStack>
@@ -115,40 +115,38 @@ export default function Pricing() {
               <Box
                 key={sectionIdx}
                 p={8}
-                bg="background.primary"
+                bg="#141414"
                 rounded="lg"
-                shadow="lg"
                 border="1px solid"
-                borderColor="border.medium"
+                borderColor="gray.700"
                 _hover={{
-                  shadow: 'xl',
-                  borderColor: 'white',
+                  borderColor: 'brand.500',
                 }}
                 transition="all 0.3s"
               >
                 <VStack spacing={6} align="stretch">
                   <HStack spacing={3}>
                     <Text fontSize="2xl">{section.emoji}</Text>
-                    <Heading as="h3" size="lg" color="text.primary">
+                    <Heading as="h3" size="lg" color="white">
                       {section.title}
                     </Heading>
                   </HStack>
 
-                  <Divider borderColor="border.medium" />
+                  <Divider borderColor="gray.700" />
 
                   <VStack spacing={6} align="stretch">
                     {section.items.map((item, itemIdx) => (
                       <Box key={itemIdx}>
                         <VStack spacing={3} align="stretch">
                           <HStack justify="space-between" align="flex-start">
-                            <Heading as="h4" size="md" color="text.primary">
+                            <Heading as="h4" size="md" color="white">
                               {item.title}
                             </Heading>
                             {item.price && (
                               <Text
                                 fontSize="lg"
                                 fontWeight="bold"
-                                color="white"
+                                color="brand.400"
                                 whiteSpace="nowrap"
                                 ml={4}
                               >
@@ -160,11 +158,11 @@ export default function Pricing() {
                           {item.bullets && (
                             <List spacing={2}>
                               {item.bullets.map((bullet, bulletIdx) => (
-                                <ListItem key={bulletIdx} color="text.secondary">
+                                <ListItem key={bulletIdx} color="gray.300">
                                   <HStack align="flex-start" spacing={2}>
                                     <ListIcon
                                       as={FaCheckCircle}
-                                      color="white"
+                                      color="brand.500"
                                       mt={1}
                                     />
                                     <Text>{bullet}</Text>
@@ -175,13 +173,13 @@ export default function Pricing() {
                           )}
 
                           {item.description && (
-                            <Text color="text.secondary" fontSize="sm" fontStyle="italic">
+                            <Text color="gray.400" fontSize="sm" fontStyle="italic">
                               {item.description}
                             </Text>
                           )}
                         </VStack>
                         {itemIdx < section.items.length - 1 && (
-                          <Divider borderColor="border.medium" mt={4} />
+                          <Divider borderColor="gray.700" mt={4} />
                         )}
                       </Box>
                     ))}

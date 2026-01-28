@@ -9,10 +9,11 @@ import Gear from '../components/Gear'
 import Clients from '../components/Clients'
 import Testimonials from '../components/Testimonials'
 import Contact from '../components/Contact'
+import Footer from '../components/Footer'
 
 export default function Home() {
   return (
-    <Box bg="background.primary">
+    <Box bg="#0a0a0a">
       <Hero />
       <About />
       <Services />
@@ -21,6 +22,7 @@ export default function Home() {
       <Clients />
       <Testimonials /> */}
       <Contact />
+      <Footer />
     </Box>
   )
 }

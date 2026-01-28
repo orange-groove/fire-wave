@@ -31,13 +31,14 @@ const NavLink = ({ children, href }: { children: React.ReactNode; href: string }
       onClick={handleClick}
       px={2}
       py={1}
-      rounded={'md'}
       _hover={{
         textDecoration: 'none',
-        bg: 'background.secondary',
+        transform: 'scale(1.1)',
       }}
       cursor="pointer"
-      color="text.primary"
+      color="white"
+      fontWeight="500"
+      transition="transform 0.2s ease"
     >
       {children}
     </Text>
@@ -53,7 +54,7 @@ export default function Nav() {
   }
 
   return (
-    <Box bg="background.primary" px={4} boxShadow={'lg'} position="fixed" top={0} left={0} right={0} zIndex={1000} borderBottom="1px solid" borderColor="border.medium">
+    <Box bg="black" px={4} boxShadow={'sm'} position="fixed" top={0} left={0} right={0} zIndex={1000} borderBottom="1px solid" borderColor="border.light">
       <Container maxW="container.xl">
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <HStack spacing={8} alignItems={'center'}>
@@ -63,13 +64,7 @@ export default function Nav() {
               _hover={{ opacity: 0.8 }}
               transition="opacity 0.2s"
             >
-              <Image
-                src="/logo.webp"
-                alt="Fire Wave logo"
-                width={48}
-                height={48}
-                priority
-              />
+             <Text fontSize="xl" fontWeight="bold" color="brand.500">Fire Wave Studio</Text>
             </Box>
             
             {!isMobile && (
@@ -94,6 +89,10 @@ export default function Nav() {
                     element.scrollIntoView({ behavior: 'smooth' })
                   }
                 }}
+                _hover={{
+                  bg: 'brand.500',
+                  color: 'white',
+                }}
               >
                 Get Started
               </Button>
@@ -105,9 +104,9 @@ export default function Nav() {
                 aria-label={'Open Menu'}
                 display={{ md: 'none' }}
                 onClick={isOpen ? onClose : onOpen}
-                color="text.primary"
+                color="gray.800"
                 bg="transparent"
-                _hover={{ bg: 'background.secondary' }}
+                _hover={{ bg: 'gray.100' }}
               />
             )}
           </Flex>

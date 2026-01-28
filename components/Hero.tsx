@@ -3,12 +3,9 @@
 import {
   Box,
   Container,
-  Text,
-  VStack,
 } from '@chakra-ui/react'
 import Image from 'next/image'
 import Slider from 'react-slick'
-import { getContent } from '../lib/content'
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -27,7 +24,6 @@ const studioImages = [
 ]
 
 export default function Hero() {
-  const content = getContent()
 
   const sliderSettings = {
     dots: false,
@@ -51,7 +47,7 @@ export default function Hero() {
       h="100vh" 
       w="100vw" 
       overflow="hidden"
-      bg="background.primary"
+      bg="white"
     >
       {/* Background Images Slider */}
       <Box
@@ -109,20 +105,21 @@ export default function Hero() {
         alignItems="center"
         justifyContent="center"
       >
-        <Container maxW="container.xl">
-          <VStack spacing={8} textAlign="center">
-            <Text fontSize={['40px', '60px', '80px']} color="text.primary">Fire Wave Studios</Text>
-            <Text
-              fontSize="xl"
-              color="text.primary"
-              maxW="2xl"
-              textShadow="2px 2px 4px rgba(0, 0, 0, 0.8)"
-            >
-              {content.hero.subtitle}
-            </Text>
-          </VStack>
+        <Container maxW="container.xl" display="flex" justifyContent="center">
+          <Image
+            src="/logo.png"
+            alt="Fire Wave Studios"
+            width={1000}
+            height={1000}
+            priority
+            style={{
+              filter: 'drop-shadow(0 4px 20px rgba(0, 0, 0, 0.5))',
+              maxWidth: '80vw',
+              height: 'auto',
+            }}
+          />
         </Container>
       </Box>
     </Box>
   )
-} 
+}
