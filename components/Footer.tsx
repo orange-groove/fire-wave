@@ -116,9 +116,6 @@ export default function Footer() {
             </HStack>
           </VStack>
         </Stack>
-
-        <Divider borderColor="gray.800" />
-
         {/* Copyright */}
         <Text color="gray.500" fontSize="sm" textAlign="center">
           &copy; {currentYear} Fire Wave Studios. All rights reserved.
