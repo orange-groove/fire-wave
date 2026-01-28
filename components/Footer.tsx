@@ -22,9 +22,8 @@ const navLinks = [
 ]
 
 const socialLinks = [
-  { icon: FaInstagram, href: 'https://instagram.com/firewavestudios', label: 'Instagram' },
+  { icon: FaInstagram, href: 'https://www.instagram.com/firewavestudio912/', label: 'Instagram' },
   { icon: FaFacebook, href: 'https://www.facebook.com/profile.php?id=61578999137660', label: 'Facebook' },
-  { icon: FaYoutube, href: 'https://youtube.com/@firewavestudios', label: 'YouTube' },
 ]
 
 export default function Footer() {
