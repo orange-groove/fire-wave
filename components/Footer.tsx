@@ -55,7 +55,6 @@ export default function Footer() {
               height={300}
               style={{ filter: 'brightness(1.1)' }}
             />
-            
           </VStack>
 
           {/* Quick Links */}

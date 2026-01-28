@@ -16,7 +16,7 @@ export default function About() {
     <Box 
       py={24} 
       id="about" 
-      bgGradient="linear(135deg, #7c2d12 0%, #c2410c 50%, #ea580c 100%)"
+      bgGradient="linear(to-br, #0a0a0a 0%, #151515 40%, #1a1a1a 60%, #0f0f0f 100%)"
       position="relative"
       overflow="hidden"
     >
@@ -28,7 +28,7 @@ export default function About() {
         transform="translate(-50%, -50%)"
         w="600px"
         h="600px"
-        bg="radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%)"
+        bg="radial-gradient(circle, rgba(249, 115, 22, 0.08) 0%, transparent 70%)"
         pointerEvents="none"
       />
       <Container maxW="container.xl" position="relative" zIndex={1}>
