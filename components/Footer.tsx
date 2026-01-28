@@ -51,8 +51,8 @@ export default function Footer() {
             <Image
               src="/logo.png"
               alt="Fire Wave Studios"
-              width={300}
-              height={300}
+              width={200}
+              height={200}
               style={{ filter: 'brightness(1.1)' }}
             />
           </VStack>
@@ -117,7 +117,7 @@ export default function Footer() {
           </VStack>
         </Stack>
 
-        <Divider borderColor="gray.800" my={8} />
+        <Divider borderColor="gray.800" />
 
         {/* Copyright */}
         <Text color="gray.500" fontSize="sm" textAlign="center">

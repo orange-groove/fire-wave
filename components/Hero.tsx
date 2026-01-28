@@ -109,8 +109,8 @@ export default function Hero() {
           <Image
             src="/logo.png"
             alt="Fire Wave Studios"
-            width={1000}
-            height={1000}
+            width={600}
+            height={600}
             priority
             style={{
               filter: 'drop-shadow(0 4px 20px rgba(0, 0, 0, 0.5))',
