@@ -64,7 +64,7 @@ export default function Nav() {
               _hover={{ opacity: 0.8 }}
               transition="opacity 0.2s"
             >
-             <Text fontSize="xl" color="brand.500">Fire Wave Studio</Text>
+             <Text fontSize="xl" fontWeight="medium" color="brand.500">Fire Wave Studio</Text>
             </Box>
             
             {!isMobile && (
@@ -72,9 +72,7 @@ export default function Nav() {
                 <NavLink href="#about">About</NavLink>
                 <NavLink href="#services">Services</NavLink>
                 <NavLink href="#pricing">Pricing</NavLink>
-                {/* <NavLink href="#gear">Gear</NavLink> */}
-                {/* <NavLink href="#clients">Clients</NavLink>
-                <NavLink href="#testimonials">Testimonials</NavLink> */}
+                <NavLink href="#live-sound">Live Sound</NavLink>
                 <NavLink href="#contact">Contact</NavLink>
               </HStack>
             )}
@@ -118,9 +116,7 @@ export default function Nav() {
               <NavLink href="#about">About</NavLink>
               <NavLink href="#services">Services</NavLink>
               <NavLink href="#pricing">Pricing</NavLink>
-              {/* <NavLink href="#gear">Gear</NavLink> */}
-              {/* <NavLink href="#clients">Clients</NavLink>
-              <NavLink href="#testimonials">Testimonials</NavLink> */}
+              <NavLink href="#live-sound">Live Sound</NavLink>
               <NavLink href="#contact">Contact</NavLink>
             </Stack>
           </Box>
