@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import {
   Box,
   Container,
@@ -50,6 +50,15 @@ export default function Gallery() {
   const goToNext = () => {
     setSelectedIndex((prev) => (prev === studioImages.length - 1 ? 0 : prev + 1))
   }
+
+  // Preload all images on mount for faster lightbox
+  useEffect(() => {
+    studioImages.forEach((image) => {
+      const img = new window.Image()
+      img.src = image.src
+    })
+  }, [])
+
   const sliderSettings = {
     dots: true,
     infinite: true,
@@ -107,6 +116,8 @@ export default function Gallery() {
                       style={{
                         objectFit: 'cover',
                       }}
+                      priority={index < 3}
+                      loading={index < 3 ? 'eager' : 'lazy'}
                     />
                   </Box>
                 </Box>
@@ -144,18 +155,32 @@ export default function Gallery() {
               size="lg"
             />
 
-            {/* Image */}
+            {/* Images - render all, show selected */}
             <Box position="relative" w="90vw" h="85vh" maxW="1400px">
-              <Image
-                src={studioImages[selectedIndex].src}
-                alt={studioImages[selectedIndex].alt}
-                fill
-                sizes="100vw"
-                style={{
-                  objectFit: 'contain',
-                }}
-                priority
-              />
+              {studioImages.map((image, index) => (
+                <Box
+                  key={index}
+                  position="absolute"
+                  top={0}
+                  left={0}
+                  right={0}
+                  bottom={0}
+                  opacity={index === selectedIndex ? 1 : 0}
+                  transition="opacity 0.2s"
+                  pointerEvents={index === selectedIndex ? 'auto' : 'none'}
+                >
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    sizes="100vw"
+                    style={{
+                      objectFit: 'contain',
+                    }}
+                    priority
+                  />
+                </Box>
+              ))}
             </Box>
 
             {/* Next Button */}
