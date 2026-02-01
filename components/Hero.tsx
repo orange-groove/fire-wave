@@ -3,137 +3,113 @@
 import {
   Box,
   Container,
+  Heading,
   Text,
   VStack,
+  HStack,
+  Button,
 } from '@chakra-ui/react'
-import Image from 'next/image'
-import Slider from 'react-slick'
-
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
-const studioImages = [
-  '/board.jpg',
-  '/control_room.jpg',
-  '/drums.jpg',
-  '/drums_2.jpg',
-  '/guitars.jpg',
-  '/mic.jpg',
-  '/room_1.jpg',
-  '/room_2.jpg',
-  '/room_3.jpg',
-  '/room_4.jpg',
-]
 
 export default function Hero() {
-
-  const sliderSettings = {
-    dots: false,
-    infinite: true,
-    speed: 1000,
-    fade: true,
-    autoplay: true,
-    autoplaySpeed: 5000,
-    pauseOnHover: false,
-    arrows: false,
-    cssEase: 'ease-in-out',
-    lazyLoad: 'ondemand' as const,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    waitForAnimate: true,
+  const handleScrollTo = (id: string) => {
+    const element = document.querySelector(id)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
   }
 
   return (
     <Box 
       position="relative" 
-      h="100vh" 
+      minH="100vh" 
       w="100vw" 
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
       overflow="hidden"
-      bg="white"
+      bgImage="url('/bg.jpg')"
+      bgSize="cover"
+      bgPosition="center"
+      bgRepeat="no-repeat"
     >
-      {/* Background Images Slider */}
-      <Box
-        position="absolute"
-        top={0}
-        left={0}
-        w="100%"
-        h="100%"
-        zIndex={1}
-      >
-        <Slider {...sliderSettings}>
-          {studioImages.map((image, index) => (
-            <div key={image}>
-              <Box
-                position="relative"
-                w="100%"
-                h="100vh"
-                overflow="hidden"
-              >
-                <Image
-                  src={image}
-                  alt={`Studio image ${index + 1}`}
-                  fill
-                  sizes="100vw"
-                  style={{
-                    objectFit: 'cover',
-                    objectPosition: 'center',
-                  }}
-                  priority={index === 0}
-                  quality={85}
-                />
-              </Box>
-            </div>
-          ))}
-        </Slider>
-      </Box>
 
-      {/* Black Overlay */}
-      <Box
-        position="absolute"
-        top={0}
-        left={0}
-        w="100%"
-        h="100%"
-        bg="rgba(0, 0, 0, 0.5)"
-        zIndex={2}
-      />
+      <Container maxW="container.lg" position="relative" zIndex={1}>
+        <VStack spacing={8} textAlign="center">
+          {/* Main Title */}
+          <Heading
+            as="h1"
+            fontSize={{ base: '4xl', md: '6xl', lg: '7xl' }}
+            fontWeight="700"
+            color="white"
+            letterSpacing="tight"
+            lineHeight="1.1"
+          >
+            Fire Wave Sound
+          </Heading>
 
-      {/* Content */}
-      <Box
-        position="relative"
-        zIndex={3}
-        h="100%"
-        display="flex"
-        alignItems="center"
-        justifyContent="center"
-      >
-        <Container maxW="container.xl" display="flex" justifyContent="center">
-          <VStack spacing={4}>
-            <Image
-              src="/logo.png"
-              alt="Fire Wave Studios"
-              width={600}
-              height={600}
-              priority
-              style={{
-                filter: 'drop-shadow(0 4px 20px rgba(0, 0, 0, 0.5))',
-                maxWidth: '80vw',
-                height: 'auto',
+          {/* Services Line */}
+          <Text
+            fontSize={{ base: 'lg', md: 'xl' }}
+            color="gray.400"
+            fontWeight="400"
+            letterSpacing="wider"
+          >
+            Recording • Mixing • Mastering • Live Sound
+          </Text>
+
+          {/* Tagline */}
+          <Text
+            fontSize={{ base: 'md', md: 'lg' }}
+            color="gray.500"
+            maxW="md"
+          >
+            Studio & Event Production in Coastal Georgia
+          </Text>
+
+          {/* CTAs */}
+          <HStack 
+            spacing={4} 
+            pt={4}
+            flexDirection={{ base: 'column', sm: 'row' }}
+            w={{ base: 'full', sm: 'auto' }}
+          >
+            <Button
+              size="lg"
+              bg="white"
+              color="black"
+              fontWeight="600"
+              px={8}
+              _hover={{ 
+                bg: 'gray.100',
+                transform: 'translateY(-2px)',
               }}
-            />
-            <Text 
-              color="white" 
-              fontSize={{ base: 'lg', md: '2xl' }}
-              fontWeight="300"
-              letterSpacing="wider"
-              fontStyle="italic"
-              textShadow="0 2px 10px rgba(0, 0, 0, 0.5)"
+              transition="all 0.2s"
+              onClick={() => handleScrollTo('#contact')}
+              w={{ base: 'full', sm: 'auto' }}
             >
-              Richmond Hill, GA
-            </Text>
-          </VStack>
-        </Container>
-      </Box>
+              Book a Session
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              borderColor="gray.600"
+              color="white"
+              fontWeight="600"
+              px={8}
+              _hover={{ 
+                bg: 'whiteAlpha.100',
+                borderColor: 'gray.400',
+                transform: 'translateY(-2px)',
+              }}
+              transition="all 0.2s"
+              onClick={() => handleScrollTo('#live-sound')}
+              w={{ base: 'full', sm: 'auto' }}
+            >
+              Get a Live Quote
+            </Button>
+          </HStack>
+        </VStack>
+      </Container>
     </Box>
   )
 }

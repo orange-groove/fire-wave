@@ -5,6 +5,7 @@ import Hero from '../components/Hero'
 import About from '../components/About'
 import Services from '../components/Services'
 import Pricing from '../components/Pricing'
+import Gallery from '../components/Gallery'
 import LiveSound from '../components/LiveSound'
 import Gear from '../components/Gear'
 import Clients from '../components/Clients'
@@ -18,6 +19,7 @@ export default function Home() {
       <Hero />
       <About />
       <Services />
+      <Gallery />
       <Pricing />
       <LiveSound />
       {/* <Gear />
