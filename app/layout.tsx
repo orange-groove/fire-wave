@@ -26,15 +26,19 @@ const zillaSlab = Zilla_Slab({
 
 export const metadata: Metadata = {
   title: "Fire Wave Studios",
-  description: "Fire Wave Studios is a recording studio in Richmond Hill, GA. We offer a range of services from recording to mixing and mastering.",
+  description: "Professional recording studio in Richmond Hill, GA offering audio recording, mixing, mastering, and live sound production for bands, artists, and events throughout Coastal Georgia.",
   icons: {
-    icon: '/logo.png',
-    shortcut: '/logo.png',
-    apple: '/logo.png',
+    icon: [
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
+    ],
+    shortcut: '/favicon-32x32.png',
+    apple: '/apple-touch-icon.png',
   },
   openGraph: {
     title: "Fire Wave Studios",
-    description: "Professional audio recording, mixing, and mastering services in Richmond Hill, GA",
+    description: "Professional recording studio offering audio recording, mixing, mastering, and live sound production in Richmond Hill, GA",
     url: "https://firewave912.com",
     siteName: "Fire Wave Studios",
     images: [
@@ -51,7 +55,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "Fire Wave Studios",
-    description: "Professional audio recording, mixing, and mastering services in Richmond Hill, GA",
+    description: "Professional recording studio offering audio recording, mixing, mastering, and live sound production in Richmond Hill, GA",
     images: ['https://firewave912.com/logo.png'],
   },
 };
