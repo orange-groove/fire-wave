@@ -73,6 +73,12 @@
       "title": "Mastering",
       "description": "Final polish and optimization for release. We ensure your music sounds great on all platforms and devices.",
       "icon": "FaHeadphones"
+    },
+    {
+      "id": 4,
+      "title": "Live Sound",
+      "description": "Professional live audio for bands and events. Full PA systems, monitors, and on-site engineering throughout Coastal Georgia.",
+      "icon": "FaVolumeUp"
     }
   ],
   "gear": [

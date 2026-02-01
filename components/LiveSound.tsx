@@ -117,7 +117,7 @@ export default function LiveSound() {
               Live Sound & Event Production
             </Heading>
             <Text color="gray.400" maxW="2xl">
-              Professional live audio services for bands, festivals, private events, and corporate functions throughout Savannah, and Coastal Georgia.
+              Professional live audio services for events and corporate functions throughout Savannah, and Coastal Georgia.
             </Text>
           </VStack>
 

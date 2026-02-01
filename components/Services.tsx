@@ -9,13 +9,14 @@ import {
   SimpleGrid,
   Icon,
 } from '@chakra-ui/react'
-import { FaMicrophone, FaMusic, FaHeadphones } from 'react-icons/fa'
+import { FaMicrophone, FaMusic, FaHeadphones, FaVolumeUp } from 'react-icons/fa'
 import { getContent } from '../lib/content'
 
 const iconMap = {
   FaMicrophone,
   FaMusic,
   FaHeadphones,
+  FaVolumeUp,
 }
 
 export default function Services() {
@@ -28,7 +29,7 @@ export default function Services() {
           <Heading as="h2" size="xl" textAlign="center" color="white">
             Our Services
           </Heading>
-          <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8} w="full">
+          <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing={8} w="full">
             {content.services.map((service) => {
               const IconComponent = iconMap[service.icon as keyof typeof iconMap]
               return (
