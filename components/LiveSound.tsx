@@ -39,8 +39,7 @@ const packages: Package[] = [
     ],
     includes: [
       'Professional mixing console',
-      'Up to 6 microphones',
-      'Basic monitor mix',
+      '1 monitor mix',
       'On-site engineer (up to 4 hours)',
       'Setup + teardown',
     ],
@@ -62,7 +61,6 @@ const packages: Package[] = [
       'Drum mic kit (kick, snare, overheads)',
       '5 vocal microphones',
       '8-channel DI rack',
-      'Professional stage cabling',
       'On-site engineer (up to 6 hours)',
       'Setup + teardown',
     ],
