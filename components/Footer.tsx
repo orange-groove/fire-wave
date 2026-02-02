@@ -51,7 +51,7 @@ export default function Footer() {
           <VStack align={{ base: 'center', md: 'flex-start' }} spacing={4} maxW="300px">
             <Image
               src="/logo.png"
-              alt="Fire Wave Studios"
+              alt="Fire Wave Sound"
               width={200}
               height={200}
               style={{ filter: 'brightness(1.1)' }}
@@ -125,7 +125,7 @@ export default function Footer() {
         </Stack>
         {/* Copyright */}
         <Text color="gray.500" fontSize="sm" textAlign="center">
-          &copy; {currentYear} Fire Wave Studios. All rights reserved.
+          &copy; {currentYear} Fire Wave Sound. All rights reserved.
         </Text>
       </Container>
     </Box>
