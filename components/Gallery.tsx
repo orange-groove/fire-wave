@@ -15,7 +15,6 @@ import {
   HStack,
 } from '@chakra-ui/react'
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons'
-import Image from 'next/image'
 import Slider from 'react-slick'
 
 import "slick-carousel/slick/slick.css";
@@ -108,16 +107,18 @@ export default function Gallery() {
                     _hover={{ transform: 'scale(1.02)' }}
                     transition="transform 0.2s"
                   >
-                    <Image
+                    <img
                       src={image.src}
                       alt={image.alt}
-                      fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       style={{
+                        width: '100%',
+                        height: '100%',
                         objectFit: 'cover',
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
                       }}
-                      priority={index < 3}
-                      loading={index < 3 ? 'eager' : 'lazy'}
+                      loading="eager"
                     />
                   </Box>
                 </Box>
@@ -169,15 +170,14 @@ export default function Gallery() {
                   transition="opacity 0.2s"
                   pointerEvents={index === selectedIndex ? 'auto' : 'none'}
                 >
-                  <Image
+                  <img
                     src={image.src}
                     alt={image.alt}
-                    fill
-                    sizes="100vw"
                     style={{
+                      width: '100%',
+                      height: '100%',
                       objectFit: 'contain',
                     }}
-                    priority
                   />
                 </Box>
               ))}
