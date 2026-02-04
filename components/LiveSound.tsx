@@ -15,6 +15,7 @@ import {
   Badge,
 } from '@chakra-ui/react'
 import { FaCheckCircle } from 'react-icons/fa'
+import Reveal from './Reveal'
 
 interface Package {
   title: string
@@ -99,43 +100,46 @@ export default function LiveSound() {
   return (
     <Box bg="#0f0f0f" py={20} id="live-sound">
       <Container maxW="container.xl">
-        <VStack spacing={12}>
-          {/* Header */}
-          <VStack spacing={4} textAlign="center">
-            <Badge 
-              colorScheme="orange" 
-              fontSize="sm" 
-              px={4} 
-              py={1} 
-              borderRadius="full"
-            >
-              Fire Wave Live
-            </Badge>
-            <Heading as="h2" size="xl" color="white">
-              Live Sound & Event Production
-            </Heading>
-            <Text color="gray.400" maxW="2xl">
-              Professional live audio services for events and corporate functions throughout Savannah, and Coastal Georgia.
-            </Text>
-          </VStack>
-
-          {/* Packages */}
-          <SimpleGrid columns={{ base: 1, lg: 3 }} spacing={8} w="full">
-            {packages.map((pkg, idx) => (
-              <Box
-                key={idx}
-                p={8}
-                bg="#1a1a1a"
-                rounded="lg"
-                border="1px solid"
-                borderColor="gray.800"
-                _hover={{
-                  borderColor: 'brand.500',
-                }}
-                transition="all 0.3s"
-                display="flex"
-                flexDirection="column"
+        <Reveal>
+          <VStack spacing={12}>
+            {/* Header */}
+            <VStack spacing={4} textAlign="center">
+              <Badge 
+                colorScheme="orange" 
+                fontSize="sm" 
+                px={4} 
+                py={1} 
+                borderRadius="full"
               >
+                Fire Wave Live
+              </Badge>
+              <Heading as="h2" size="xl" color="white">
+                Live Sound & Event Production
+              </Heading>
+              <Text color="gray.400" maxW="2xl">
+                Professional live audio services for events and corporate functions throughout Savannah, and Coastal Georgia.
+              </Text>
+            </VStack>
+
+            {/* Packages */}
+            <SimpleGrid columns={{ base: 1, lg: 3 }} spacing={8} w="full">
+              {packages.map((pkg, idx) => (
+                <Box
+                  key={idx}
+                  p={8}
+                  bg="#1a1a1a"
+                  rounded="lg"
+                  border="1px solid"
+                  borderColor="gray.800"
+                  _hover={{
+                    borderColor: 'brand.500',
+                    transform: 'translateY(-4px)',
+                    boxShadow: '0 12px 24px rgba(0, 0, 0, 0.3)',
+                  }}
+                  transition="all 0.3s ease"
+                  display="flex"
+                  flexDirection="column"
+                >
                 <VStack spacing={4} align="stretch" flex={1}>
                   {/* Package Header */}
                   <HStack spacing={3}>
@@ -249,8 +253,9 @@ export default function LiveSound() {
                 </HStack>
               </ListItem>
             </List>
-          </Box>
-        </VStack>
+            </Box>
+          </VStack>
+        </Reveal>
       </Container>
     </Box>
   )

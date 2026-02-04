@@ -16,6 +16,7 @@ import {
 } from '@chakra-ui/react'
 import { useState } from 'react'
 import { getContent } from '../lib/content'
+import Reveal from './Reveal'
 
 export default function Contact() {
   const toast = useToast()
@@ -115,11 +116,12 @@ export default function Contact() {
   return (
     <Box bg="#0a0a0a" py={20} id="contact">
       <Container maxW="container.md">
-        <VStack spacing={8}>
-          <Heading as="h2" size="xl" textAlign="center" color="white">
-            {content.contact.title}
-          </Heading>
-          <Box as="form" onSubmit={handleContactSubmit} w="full" maxW="lg">
+        <Reveal>
+          <VStack spacing={8}>
+            <Heading as="h2" size="xl" textAlign="center" color="white">
+              {content.contact.title}
+            </Heading>
+            <Box as="form" onSubmit={handleContactSubmit} w="full" maxW="lg">
             <VStack spacing={6}>
               <FormControl isRequired isInvalid={!!errors.name}>
                 <FormLabel color="gray.300">Name</FormLabel>
@@ -198,9 +200,10 @@ export default function Contact() {
               >
                 Send Message
               </Button>
-            </VStack>
-          </Box>
-        </VStack>
+              </VStack>
+            </Box>
+          </VStack>
+        </Reveal>
       </Container>
     </Box>
   )

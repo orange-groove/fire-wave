@@ -64,7 +64,7 @@ export default function Nav() {
               _hover={{ opacity: 0.8 }}
               transition="opacity 0.2s"
             >
-             <Text fontSize="xl" fontWeight="medium" color="brand.500">Fire Wave Sound</Text>
+             <Text fontSize="xl" fontWeight="medium" color="brand.500" fontFamily="var(--font-orbitron)">Fire Wave Sound</Text>
             </Box>
             
             {!isMobile && (

@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Orbitron } from "next/font/google";
 import { Zilla_Slab } from "next/font/google";
+
+const orbitron = Orbitron({
+  variable: "--font-orbitron",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+});
 import "./globals.css";
 import { Providers } from "./providers";
 import Nav from "../components/Nav";
@@ -25,11 +31,11 @@ const zillaSlab = Zilla_Slab({
 });
 
 export const metadata: Metadata = {
-  title: "Fire Wave Sound | Recording Studio & Live Sound in Richmond Hill, GA",
-  description: "Professional recording studio in Richmond Hill, GA offering audio recording, mixing, mastering, and live sound production for bands, artists, and events throughout Coastal Georgia.",
-  keywords: ["recording studio", "Richmond Hill GA", "live sound", "mixing", "mastering", "Savannah", "Coastal Georgia", "audio production"],
-  authors: [{ name: "Fire Wave Sound" }],
-  creator: "Fire Wave Sound",
+  title: "Fire Wave Studio | Savannah Recording Studio & Live Sound (Richmond Hill, GA)",
+  description: "Professional recording studio serving Savannah & Richmond Hill, GA. Band-ready live drum tracking, mixing, mastering, and live sound services.",
+  keywords: ["Savannah recording studio", "Richmond Hill GA", "live sound", "mixing", "mastering", "drum tracking", "Coastal Georgia", "audio production", "bands"],
+  authors: [{ name: "Fire Wave Studio" }],
+  creator: "Fire Wave Studio",
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },
@@ -42,10 +48,10 @@ export const metadata: Metadata = {
     apple: '/apple-touch-icon.png',
   },
   openGraph: {
-    title: "Fire Wave Sound | Recording Studio & Live Sound",
-    description: "Professional recording studio offering audio recording, mixing, mastering, and live sound production in Richmond Hill, GA",
+    title: "Fire Wave Studio | Savannah Recording Studio & Live Sound",
+    description: "Professional recording studio serving Savannah & Richmond Hill, GA. Band-ready live drum tracking, mixing, mastering, and live sound services.",
     url: "https://www.firewave912.com",
-    siteName: "Fire Wave Sound",
+    siteName: "Fire Wave Studio",
     images: [
       {
         url: 'https://www.firewave912.com/og-image.jpg',
@@ -59,8 +65,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Fire Wave Sound | Recording Studio & Live Sound",
-    description: "Professional recording studio offering audio recording, mixing, mastering, and live sound production in Richmond Hill, GA",
+    title: "Fire Wave Studio | Savannah Recording Studio & Live Sound",
+    description: "Professional recording studio serving Savannah & Richmond Hill, GA. Band-ready live drum tracking, mixing, mastering, and live sound services.",
     images: ['https://www.firewave912.com/og-image.jpg'],
     creator: '@firewavestudio',
   },
@@ -107,19 +113,21 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "LocalBusiness",
+              "@type": ["LocalBusiness", "MusicRecordingStudio"],
               "@id": "https://www.firewave912.com",
-              "name": "Fire Wave Sound",
-              "description": "Professional recording studio offering audio recording, mixing, mastering, and live sound production in Richmond Hill, GA",
+              "name": "Fire Wave Studio",
+              "alternateName": "Fire Wave Sound",
+              "description": "Savannah recording studio serving Richmond Hill, GA. Professional band-ready live drum tracking, mixing, mastering, and live sound services for artists throughout Coastal Georgia.",
               "url": "https://www.firewave912.com",
-              "logo": "https://firewave912.com/logo.png",
-              "image": "https://firewave912.com/og-image.jpg",
+              "logo": "https://www.firewave912.com/logo.png",
+              "image": "https://www.firewave912.com/og-image.jpg",
               "telephone": "",
               "email": "info@firewave912.com",
               "address": {
                 "@type": "PostalAddress",
                 "addressLocality": "Richmond Hill",
                 "addressRegion": "GA",
+                "postalCode": "31324",
                 "addressCountry": "US"
               },
               "geo": {
@@ -127,7 +135,13 @@ export default function RootLayout({
                 "latitude": 31.9382,
                 "longitude": -81.3054
               },
-              "areaServed": ["Richmond Hill", "Savannah", "Coastal Georgia"],
+              "areaServed": [
+                {"@type": "City", "name": "Savannah", "addressRegion": "GA"},
+                {"@type": "City", "name": "Richmond Hill", "addressRegion": "GA"},
+                {"@type": "City", "name": "Pooler", "addressRegion": "GA"},
+                {"@type": "City", "name": "Hinesville", "addressRegion": "GA"},
+                "Coastal Georgia"
+              ],
               "priceRange": "$$",
               "openingHours": "Mo-Su",
               "sameAs": [
@@ -142,8 +156,8 @@ export default function RootLayout({
                     "@type": "Offer",
                     "itemOffered": {
                       "@type": "Service",
-                      "name": "Audio Recording",
-                      "description": "Professional recording sessions"
+                      "name": "Live Drum Tracking",
+                      "description": "Band-ready tracking room for live drums and full band recording"
                     }
                   },
                   {
@@ -151,7 +165,7 @@ export default function RootLayout({
                     "itemOffered": {
                       "@type": "Service",
                       "name": "Mixing & Mastering",
-                      "description": "Professional mixing and mastering services"
+                      "description": "Professional mixing and mastering for streaming and radio"
                     }
                   },
                   {
@@ -159,16 +173,21 @@ export default function RootLayout({
                     "itemOffered": {
                       "@type": "Service",
                       "name": "Live Sound Production",
-                      "description": "Live audio for events and concerts"
+                      "description": "Live audio for concerts, festivals, and events in Savannah and Coastal Georgia"
                     }
                   }
                 ]
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "5",
+                "reviewCount": "10"
               }
             })
           }}
         />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${orbitron.variable}`}>
         <Providers>
           <Nav />
           {children}

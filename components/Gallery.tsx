@@ -16,6 +16,7 @@ import {
 } from '@chakra-ui/react'
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons'
 import Slider from 'react-slick'
+import Reveal from './Reveal'
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -88,44 +89,48 @@ export default function Gallery() {
   return (
     <Box bg="#0a0a0a" py={20} id="gallery">
       <Container maxW="container.xl">
-        <VStack spacing={12}>
-          <Heading as="h2" size="xl" textAlign="center" color="white">
-            The Studio
-          </Heading>
-          
-          <Box w="full" px={{ base: 0, md: 4 }}>
-            <Slider {...sliderSettings}>
-              {studioImages.map((image, index) => (
-                <Box key={index} px={2}>
-                  <Box
-                    position="relative"
-                    h={{ base: '250px', md: '350px' }}
-                    rounded="lg"
-                    overflow="hidden"
-                    cursor="pointer"
-                    onClick={() => openLightbox(index)}
-                    _hover={{ transform: 'scale(1.02)' }}
-                    transition="transform 0.2s"
-                  >
-                    <img
-                      src={image.src}
-                      alt={image.alt}
-                      style={{
-                        width: '100%',
-                        height: '100%',
-                        objectFit: 'cover',
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                      }}
-                      loading="eager"
-                    />
+        <Reveal>
+          <VStack spacing={12}>
+            <Heading as="h2" size="xl" textAlign="center" color="white">
+              The Studio
+            </Heading>
+            
+            <Box w="full" px={{ base: 0, md: 4 }}>
+              <Slider {...sliderSettings}>
+                {studioImages.map((image, index) => (
+                  <Box key={index} px={2}>
+                    <Box
+                      position="relative"
+                      h={{ base: '250px', md: '350px' }}
+                      rounded="lg"
+                      overflow="hidden"
+                      cursor="pointer"
+                      onClick={() => openLightbox(index)}
+                      role="group"
+                    >
+                      <img
+                        src={image.src}
+                        alt={image.alt}
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'cover',
+                          position: 'absolute',
+                          top: 0,
+                          left: 0,
+                          transition: 'transform 0.3s ease',
+                        }}
+                        loading="eager"
+                        onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.03)'}
+                        onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+                      />
+                    </Box>
                   </Box>
-                </Box>
-              ))}
-            </Slider>
-          </Box>
-        </VStack>
+                ))}
+              </Slider>
+            </Box>
+          </VStack>
+        </Reveal>
       </Container>
 
       {/* Lightbox Modal */}
