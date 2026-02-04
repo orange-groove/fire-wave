@@ -85,7 +85,7 @@ export default function LiveSoundSavannahContent() {
         subtitle="Professional live audio for concerts, festivals, weddings, and corporate events. Reliable sound engineering throughout Coastal Georgia."
         ctaText="Get a Free Quote"
         ctaHref="#contact"
-        bgImage="/bg.jpg"
+        bgImage="/hero-bg.jpg"
       />
 
       <BenefitsRow benefits={benefits} />

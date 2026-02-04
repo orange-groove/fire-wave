@@ -15,6 +15,8 @@ import {
 import { motion, useReducedMotion } from 'framer-motion'
 import { FaStar, FaDrum, FaMapMarkerAlt } from 'react-icons/fa'
 import { heroContainer, heroItem } from '../lib/motion'
+import Image from 'next/image'
+import heroImage from '../public/hero-bg.jpg'
 
 const MotionVStack = motion(VStack)
 const MotionHeading = motion(Heading)
@@ -50,11 +52,21 @@ export default function Hero() {
       alignItems="center"
       justifyContent="center"
       overflow="hidden"
-      bgImage="url('/bg.jpg')"
-      bgSize="cover"
-      bgPosition="center"
-      bgRepeat="no-repeat"
     >
+      {/* Hero background image - using Next.js Image for LCP optimization */}
+      <Image
+        src={heroImage}
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        quality={85}
+        placeholder="blur"
+        style={{
+          objectFit: 'cover',
+          objectPosition: 'center',
+        }}
+      />
       {/* Dark overlay for text readability */}
       <Box
         position="absolute"
@@ -63,10 +75,10 @@ export default function Hero() {
         right={0}
         bottom={0}
         bg="rgba(0, 0, 0, 0.2)"
-        zIndex={0}
+        zIndex={1}
       />
 
-      <Container maxW="container.lg" position="relative" zIndex={1}>
+      <Container maxW="container.lg" position="relative" zIndex={2}>
         <MotionVStack 
           spacing={6} 
           textAlign="center"
@@ -96,7 +108,7 @@ export default function Hero() {
             maxW="2xl"
             variants={itemVariants}
           >
-            Professional recording, mixing, mastering, and live sound serving Savannah & Richmond Hill, GA.
+            Professional recording, mixing, mastering, and live sound serving Savannah and Coastal Georgia.
           </MotionText>
 
           {/* CTAs */}

@@ -91,7 +91,7 @@ export default function SavannahRecordingStudioContent() {
         subtitle="Professional recording studio serving Savannah, Richmond Hill, and Coastal Georgia. Band-ready live room, expert engineering, and results that translate."
         ctaText="Book Studio Time"
         ctaHref="#contact"
-        bgImage="/bg.jpg"
+        bgImage="/hero-bg.jpg"
       />
 
       <BenefitsRow benefits={benefits} />

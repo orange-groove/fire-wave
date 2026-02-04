@@ -10,6 +10,7 @@ import {
 } from '@chakra-ui/react'
 import { motion, useReducedMotion } from 'framer-motion'
 import { heroContainer, heroItem } from '../lib/motion'
+import Image from 'next/image'
 
 const MotionVStack = motion(VStack)
 const MotionHeading = motion(Heading)
@@ -31,7 +32,7 @@ export default function ServiceHero({
   subtitle,
   ctaText,
   ctaHref,
-  bgImage = '/bg.jpg',
+  bgImage = '/hero-bg.jpg',
 }: ServiceHeroProps) {
   const prefersReducedMotion = useReducedMotion()
 
@@ -59,12 +60,21 @@ export default function ServiceHero({
       alignItems="center"
       justifyContent="center"
       overflow="hidden"
-      bgImage={`url('${bgImage}')`}
-      bgSize="cover"
-      bgPosition="center"
-      bgRepeat="no-repeat"
       pt={{ base: 20, md: 0 }}
     >
+      {/* Hero background image - using Next.js Image for LCP optimization */}
+      <Image
+        src={bgImage}
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        quality={85}
+        style={{
+          objectFit: 'cover',
+          objectPosition: 'center',
+        }}
+      />
       {/* Dark overlay */}
       <Box
         position="absolute"
@@ -73,10 +83,10 @@ export default function ServiceHero({
         right={0}
         bottom={0}
         bg="rgba(0, 0, 0, 0.65)"
-        zIndex={0}
+        zIndex={1}
       />
 
-      <Container maxW="container.lg" position="relative" zIndex={1}>
+      <Container maxW="container.lg" position="relative" zIndex={2}>
         <MotionVStack
           spacing={6}
           textAlign="center"
