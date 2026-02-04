@@ -17,10 +17,20 @@ export default function Reveal({
   delay = 0 
 }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null)
-  const [isVisible, setIsVisible] = useState(false)
+  // Default visible so above-the-fold content never renders "blank".
+  // We'll only start hidden if the element is initially outside the viewport.
+  const [isVisible, setIsVisible] = useState(true)
   const prefersReducedMotion = useReducedMotion()
 
   useEffect(() => {
+    if (!ref.current) return
+
+    // If the element is initially below the viewport, start hidden and reveal on intersection.
+    // If it's already in view, keep it visible (prevents blank pages on load).
+    const rect = ref.current.getBoundingClientRect()
+    const inViewport = rect.top < window.innerHeight && rect.bottom > 0
+    if (!inViewport) setIsVisible(false)
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -34,9 +44,7 @@ export default function Reveal({
       }
     )
 
-    if (ref.current) {
-      observer.observe(ref.current)
-    }
+    observer.observe(ref.current)
 
     return () => observer.disconnect()
   }, [])
@@ -49,7 +57,7 @@ export default function Reveal({
   return (
     <Box ref={ref} w={width}>
       <motion.div
-        initial="hidden"
+        initial={isVisible ? 'visible' : 'hidden'}
         animate={isVisible ? 'visible' : 'hidden'}
         variants={{
           hidden: sectionReveal.hidden,
