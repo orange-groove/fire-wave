@@ -178,6 +178,46 @@ export default function DeltaCirclePostContent() {
                 Delta Circle left with finished mixes and masters ready for Spotify release — and songs that still feels like them.
               </Text>
 
+              {/* Follow Delta Circle */}
+              <Heading as="h2" size="lg" color="white" pt={6}>
+                Follow Delta Circle
+              </Heading>
+              <Box
+                display="flex"
+                flexDirection="column"
+                alignItems="center"
+                gap={4}
+                py={4}
+              >
+                <Box
+                  w={{ base: '150px', md: '180px' }}
+                  h={{ base: '150px', md: '180px' }}
+                  rounded="full"
+                  overflow="hidden"
+                  border="2px solid"
+                  borderColor="gray.700"
+                >
+                  <img
+                    src="/artists/delta-circle/delta-circle-logo.jpg"
+                    alt="Delta Circle logo"
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                    }}
+                  />
+                </Box>
+                <ChakraLink
+                  href="https://www.facebook.com/deltacircle"
+                  isExternal
+                  color="brand.400"
+                  _hover={{ color: 'brand.300' }}
+                  fontWeight="500"
+                >
+                  Delta Circle on Facebook
+                </ChakraLink>
+              </Box>
+
               <Divider borderColor="gray.800" my={8} />
 
               {/* CTA */}
