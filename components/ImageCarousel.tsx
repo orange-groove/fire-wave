@@ -13,8 +13,8 @@ import {
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons'
 import Slider from 'react-slick'
 
+// Only import core slick CSS - skip slick-theme.css to avoid render-blocking font
 import "slick-carousel/slick/slick.css"
-import "slick-carousel/slick/slick-theme.css"
 
 export interface CarouselImage {
   src: string
@@ -227,34 +227,80 @@ export default function ImageCarousel({
       </Modal>
 
       <style jsx global>{`
+        /* Dots - CSS only (no font required) */
+        #${id} .slick-dots {
+          bottom: -30px;
+          display: flex !important;
+          justify-content: center;
+          gap: 8px;
+          padding: 0;
+          margin: 0;
+          list-style: none;
+        }
+        #${id} .slick-dots li {
+          width: 10px;
+          height: 10px;
+          margin: 0;
+        }
+        #${id} .slick-dots li button {
+          width: 10px;
+          height: 10px;
+          padding: 0;
+          border: none;
+          border-radius: 50%;
+          background: #666;
+          cursor: pointer;
+          transition: background 0.2s;
+        }
         #${id} .slick-dots li button:before {
-          color: #666;
-          font-size: 10px;
+          display: none;
         }
-        #${id} .slick-dots li.slick-active button:before {
-          color: #f97316;
+        #${id} .slick-dots li.slick-active button {
+          background: #f97316;
         }
+        
+        /* Arrows - CSS triangles (no font required) */
         #${id} .slick-prev,
         #${id} .slick-next {
           z-index: 10;
           width: 40px;
           height: 40px;
+          background: rgba(0, 0, 0, 0.3);
+          border-radius: 50%;
+          transition: background 0.2s;
+        }
+        #${id} .slick-prev:hover,
+        #${id} .slick-next:hover {
+          background: rgba(0, 0, 0, 0.5);
         }
         #${id} .slick-prev {
-          left: -5px;
+          left: 10px;
         }
         #${id} .slick-next {
-          right: -5px;
+          right: 10px;
         }
         #${id} .slick-prev:before,
         #${id} .slick-next:before {
-          font-size: 40px;
-          color: #f97316;
-          opacity: 0.8;
+          content: '';
+          display: block;
+          width: 12px;
+          height: 12px;
+          border-top: 3px solid #f97316;
+          border-right: 3px solid #f97316;
+          position: absolute;
+          top: 50%;
+        }
+        #${id} .slick-prev:before {
+          transform: translateY(-50%) rotate(-135deg);
+          left: 16px;
+        }
+        #${id} .slick-next:before {
+          transform: translateY(-50%) rotate(45deg);
+          right: 16px;
         }
         #${id} .slick-prev:hover:before,
         #${id} .slick-next:hover:before {
-          opacity: 1;
+          border-color: #fb923c;
         }
         @media (max-width: 640px) {
           #${id} .slick-prev,

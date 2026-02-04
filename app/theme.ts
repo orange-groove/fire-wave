@@ -138,6 +138,21 @@ const theme = extendTheme({
             borderColor: '#ffffff',
           },
         },
+        // Brand orange button with dark text for WCAG AA contrast compliance
+        brand: {
+          bg: 'brand.500',
+          color: 'gray.900',
+          fontWeight: '600',
+          _hover: {
+            bg: 'brand.400',
+            transform: 'translateY(-2px)',
+          },
+          _active: {
+            bg: 'brand.600',
+            transform: 'translateY(0)',
+          },
+          transition: 'all 0.2s',
+        },
       },
     },
     Input: {

@@ -59,15 +59,8 @@ export default function FinalCTA({ title, subtitle, primaryCta, secondaryCta }: 
               <Link href={primaryCta.href}>
                 <Button
                   size="lg"
-                  bg="brand.500"
-                  color="white"
-                  fontWeight="600"
+                  variant="brand"
                   px={8}
-                  _hover={{
-                    bg: 'brand.600',
-                    transform: 'translateY(-2px)',
-                  }}
-                  transition="all 0.2s"
                 >
                   {primaryCta.text}
                 </Button>

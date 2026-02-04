@@ -121,15 +121,8 @@ export default function Hero() {
           >
             <Button
               size="lg"
-              bg="brand.500"
-              color="white"
-              fontWeight="600"
+              variant="brand"
               px={8}
-              _hover={{ 
-                bg: 'brand.600',
-                transform: 'translateY(-2px)',
-              }}
-              transition="all 0.2s"
               onClick={() => handleScrollTo('#contact')}
               w={{ base: 'full', sm: 'auto' }}
             >

@@ -180,11 +180,7 @@ export default function Nav() {
             {!isMobile && (
               <Button
                 onClick={handleContactClick}
-                bg="brand.500"
-                color="white"
-                _hover={{
-                  bg: 'brand.600',
-                }}
+                variant="brand"
               >
                 Get Started
               </Button>

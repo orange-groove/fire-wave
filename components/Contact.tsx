@@ -194,9 +194,7 @@ export default function Contact() {
                 w="full"
                 isLoading={isSubmitting}
                 loadingText="Sending..."
-                bg="brand.500"
-                color="white"
-                _hover={{ bg: 'brand.600' }}
+                variant="brand"
               >
                 Send Message
               </Button>

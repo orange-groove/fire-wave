@@ -127,15 +127,8 @@ export default function ServiceHero({
           <MotionBox variants={itemVariants} pt={4}>
             <Button
               size="lg"
-              bg="brand.500"
-              color="white"
-              fontWeight="600"
+              variant="brand"
               px={8}
-              _hover={{
-                bg: 'brand.600',
-                transform: 'translateY(-2px)',
-              }}
-              transition="all 0.2s"
               onClick={() => handleScrollTo(ctaHref)}
             >
               {ctaText}

@@ -12,7 +12,15 @@ import {
   Link as ChakraLink,
   Divider,
 } from '@chakra-ui/react'
-import ImageCarousel from '../../../components/ImageCarousel'
+import dynamic from 'next/dynamic'
+
+// Lazy-load ImageCarousel to reduce initial JS bundle
+const ImageCarousel = dynamic(() => import('../../../components/ImageCarousel'), {
+  ssr: false,
+  loading: () => (
+    <Box h={{ base: '250px', md: '350px' }} bg="gray.900" rounded="lg" />
+  ),
+})
 
 const sessionImages = [
   { src: '/artists/delta-circle/1.jpeg', alt: 'Delta Circle recording session' },
@@ -241,9 +249,7 @@ export default function DeltaCirclePostContent() {
                   <Link href="/#contact" passHref legacyBehavior>
                     <Button
                       as="a"
-                      bg="brand.500"
-                      color="white"
-                      _hover={{ bg: 'brand.600' }}
+                      variant="brand"
                     >
                       Contact / Book Time
                     </Button>

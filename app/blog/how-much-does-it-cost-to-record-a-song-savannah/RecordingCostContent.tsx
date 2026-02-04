@@ -232,9 +232,7 @@ export default function RecordingCostContent() {
                   <Link href="/#contact" passHref legacyBehavior>
                     <Button
                       as="a"
-                      bg="brand.500"
-                      color="white"
-                      _hover={{ bg: 'brand.600' }}
+                      variant="brand"
                     >
                       Contact Us
                     </Button>

@@ -53,7 +53,7 @@ export default function HowItWorks({ title = 'How It Works', steps }: HowItWorks
                   <Circle
                     size="50px"
                     bg="brand.500"
-                    color="white"
+                    color="gray.900"
                     fontWeight="bold"
                     fontSize="xl"
                     flexShrink={0}

@@ -6,8 +6,16 @@ import {
   Heading,
   VStack,
 } from '@chakra-ui/react'
+import dynamic from 'next/dynamic'
 import Reveal from './Reveal'
-import ImageCarousel from './ImageCarousel'
+
+// Lazy-load ImageCarousel since it's below the fold - reduces initial JS bundle
+const ImageCarousel = dynamic(() => import('./ImageCarousel'), {
+  ssr: false,
+  loading: () => (
+    <Box h={{ base: '250px', md: '350px' }} bg="gray.900" rounded="lg" />
+  ),
+})
 
 const studioImages = [
   { src: '/board.jpg', alt: 'Mixing Board' },
