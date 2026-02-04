@@ -1,33 +1,28 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Orbitron } from "next/font/google";
-import { Zilla_Slab } from "next/font/google";
-
-const orbitron = Orbitron({
-  variable: "--font-orbitron",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
-});
 import "./globals.css";
 import { Providers } from "./providers";
 import Nav from "../components/Nav";
 import Script from "next/script";
 
+// Optimized font loading - only load weights actually used
+const orbitron = Orbitron({
+  variable: "--font-orbitron",
+  subsets: ["latin"],
+  weight: ["500"], // Only medium weight used for logo
+  display: "swap",
+});
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
-});
-
-// Note: "Zalando Sans Expanded" doesn't appear to be available in next/font/google
-// Using Zilla Slab as an alternative expanded font, or you can add it via CSS link
-const zillaSlab = Zilla_Slab({
-  variable: "--font-display",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -54,10 +49,10 @@ export const metadata: Metadata = {
     siteName: "Fire Wave Sound",
     images: [
       {
-        url: 'https://www.firewave912.com/og-image.jpg',
+        url: 'https://www.firewave912.com/og-board.jpg',
         width: 1200,
         height: 630,
-        alt: 'Fire Wave Sound - Recording Studio & Live Sound Production',
+        alt: 'Fire Wave Sound - Mixing console at Fire Wave Studio',
       },
     ],
     locale: 'en_US',
@@ -67,7 +62,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: "Fire Wave Sound | Savannah Recording Studio & Live Sound",
     description: "Professional recording studio serving Savannah & Richmond Hill, GA. Band-ready live drum tracking, mixing, mastering, and live sound services.",
-    images: ['https://www.firewave912.com/og-image.jpg'],
+    images: ['https://www.firewave912.com/og-board.jpg'],
     creator: '@firewavestudio',
   },
   robots: {
@@ -121,7 +116,7 @@ export default function RootLayout({
               "description": "Savannah recording studio serving Richmond Hill, GA. Professional band-ready live drum tracking, mixing, mastering, and live sound services for artists throughout Coastal Georgia.",
               "url": "https://www.firewave912.com",
               "logo": "https://www.firewave912.com/logo.png",
-              "image": "https://www.firewave912.com/og-image.jpg",
+              "image": "https://www.firewave912.com/og-board.jpg",
               "telephone": "",
               "email": "info@firewave912.com",
               "address": {

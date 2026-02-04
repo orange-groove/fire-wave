@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     siteName: 'Fire Wave Sound',
     images: [
       {
-        url: 'https://www.firewave912.com/og-image.jpg',
+        url: 'https://www.firewave912.com/og-board.jpg',
         width: 1200,
         height: 630,
         alt: 'Fire Wave Sound - Live Sound Services Savannah',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Live Sound Services in Savannah, GA | Fire Wave Sound',
     description: 'Professional live sound engineering and event audio in Savannah, GA. Concerts, festivals, weddings, and corporate events.',
-    images: ['https://www.firewave912.com/og-image.jpg'],
+    images: ['https://www.firewave912.com/og-board.jpg'],
   },
   alternates: {
     canonical: 'https://www.firewave912.com/live-sound-savannah',

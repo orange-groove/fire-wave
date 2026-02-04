@@ -11,37 +11,41 @@ import {
   Icon,
   Wrap,
   WrapItem,
+  keyframes,
 } from '@chakra-ui/react'
-import { motion, useReducedMotion } from 'framer-motion'
 import { FaStar, FaDrum, FaMapMarkerAlt } from 'react-icons/fa'
-import { heroContainer, heroItem } from '../lib/motion'
 import Image from 'next/image'
 import heroImage from '../public/hero-bg.jpg'
 
-const MotionVStack = motion(VStack)
-const MotionHeading = motion(Heading)
-const MotionText = motion(Text)
-const MotionHStack = motion(HStack)
-const MotionWrap = motion(Wrap)
+// CSS keyframes for fade-in animation (replaces framer-motion for LCP optimization)
+const fadeInUp = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`
+
+// Animation style helper - respects prefers-reduced-motion via CSS
+const getAnimationStyle = (delay: number) => ({
+  opacity: 0,
+  animation: `${fadeInUp} 0.6s ease-out ${delay}s forwards`,
+  '@media (prefers-reduced-motion: reduce)': {
+    opacity: 1,
+    animation: 'none',
+  },
+})
 
 export default function Hero() {
-  const prefersReducedMotion = useReducedMotion()
-
   const handleScrollTo = (id: string) => {
     const element = document.querySelector(id)
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' })
     }
   }
-
-  // If reduced motion, use simple variants
-  const containerVariants = prefersReducedMotion 
-    ? { hidden: { opacity: 1 }, visible: { opacity: 1 } }
-    : heroContainer
-
-  const itemVariants = prefersReducedMotion
-    ? { hidden: { opacity: 1, y: 0 }, visible: { opacity: 1, y: 0 } }
-    : heroItem
 
   return (
     <Box 
@@ -59,6 +63,7 @@ export default function Hero() {
         alt=""
         fill
         priority
+        fetchPriority="high"
         sizes="100vw"
         quality={85}
         placeholder="blur"
@@ -79,45 +84,39 @@ export default function Hero() {
       />
 
       <Container maxW="container.lg" position="relative" zIndex={2}>
-        <MotionVStack 
-          spacing={6} 
-          textAlign="center"
-          initial="hidden"
-          animate="visible"
-          variants={containerVariants}
-        >
+        <VStack spacing={6} textAlign="center">
           {/* SEO-Optimized H1 */}
-          <MotionHeading
+          <Heading
             as="h1"
             fontSize={{ base: '3xl', md: '5xl', lg: '6xl' }}
             fontWeight="700"
             color="white"
             letterSpacing="tight"
             lineHeight="1.1"
-            variants={itemVariants}
+            sx={getAnimationStyle(0)}
           >
             Savannah Recording Studio<br />
             <Text as="span" color="brand.400">for Bands & Artists</Text>
-          </MotionHeading>
+          </Heading>
 
           {/* Subheadline with location + services */}
-          <MotionText
+          <Text
             fontSize={{ base: 'lg', md: 'xl' }}
             color="gray.300"
             fontWeight="400"
             maxW="2xl"
-            variants={itemVariants}
+            sx={getAnimationStyle(0.1)}
           >
             Professional recording, mixing, mastering, and live sound serving Savannah and Coastal Georgia.
-          </MotionText>
+          </Text>
 
           {/* CTAs */}
-          <MotionHStack 
+          <HStack 
             spacing={4} 
             pt={4}
             flexDirection={{ base: 'column', sm: 'row' }}
             w={{ base: 'full', sm: 'auto' }}
-            variants={itemVariants}
+            sx={getAnimationStyle(0.2)}
           >
             <Button
               size="lg"
@@ -145,16 +144,16 @@ export default function Hero() {
             >
               Get a Live Sound Quote
             </Button>
-          </MotionHStack>
+          </HStack>
 
           {/* Trust Signals */}
-          <MotionWrap 
+          <Wrap 
             spacing={{ base: 4, md: 8 }} 
             justify="center" 
             pt={6}
             color="gray.400"
             fontSize="sm"
-            variants={itemVariants}
+            sx={getAnimationStyle(0.3)}
           >
             <WrapItem>
               <HStack spacing={2}>
@@ -180,8 +179,8 @@ export default function Hero() {
                 <Text>Serving Savannah, Richmond Hill, Pooler & Coastal GA</Text>
               </HStack>
             </WrapItem>
-          </MotionWrap>
-        </MotionVStack>
+          </Wrap>
+        </VStack>
       </Container>
     </Box>
   )

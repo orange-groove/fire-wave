@@ -8,6 +8,7 @@ import {
   VStack,
   SimpleGrid,
 } from '@chakra-ui/react'
+import Image from 'next/image'
 import Reveal from './Reveal'
 
 const proofItems = [
@@ -59,12 +60,12 @@ export default function ProofSection() {
                     boxShadow: '0 12px 24px rgba(0, 0, 0, 0.4)',
                   }}
                 >
-                  <img
+                  <Image
                     src={item.image}
                     alt={item.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
                     style={{
-                      width: '100%',
-                      height: '100%',
                       objectFit: 'cover',
                       transition: 'transform 0.3s',
                     }}
