@@ -189,7 +189,7 @@ export default function SavannahRecordingStudioContent() {
 
       <FAQSection faqs={faqs} />
 
-      <TestimonialsSection />
+      {/* <TestimonialsSection /> */}
 
       <FinalCTA
         title="Ready to Record?"
