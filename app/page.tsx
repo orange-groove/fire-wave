@@ -11,7 +11,6 @@ import Gallery from '../components/Gallery'
 import Pricing from '../components/Pricing'
 import LiveSound from '../components/LiveSound'
 import Contact from '../components/Contact'
-import LocalSeoFooter from '../components/LocalSeoFooter'
 import Footer from '../components/Footer'
 
 export default function Home() {
@@ -27,7 +26,6 @@ export default function Home() {
       <Pricing />
       <LiveSound />
       <Contact />
-      <LocalSeoFooter />
       <Footer />
     </Box>
   )
