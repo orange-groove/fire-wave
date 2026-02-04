@@ -61,7 +61,7 @@ export default function FirstSessionContent() {
                 If you&apos;ve never recorded in a studio before, it&apos;s normal to feel unsure about how the day will go.
               </Text>
               <Text>
-                Here&apos;s what typically happens during a session at Fire Wave Sound in Richmond Hill, just outside Savannah.
+                Here&apos;s what typically happens during a session at Fire Wave Sound.
               </Text>
 
               {/* Before You Arrive */}
