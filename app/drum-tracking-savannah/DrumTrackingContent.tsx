@@ -78,8 +78,8 @@ const faqs = [
 ]
 
 const images = [
-  { src: '/drums.jpg', alt: 'Drum kit setup at Fire Wave Studio Savannah', caption: 'Professional drum setup' },
-  { src: '/drums_2.jpg', alt: 'Drum tracking room Fire Wave Studio', caption: 'Acoustically treated live room' },
+  { src: '/drums.jpg', alt: 'Drum kit setup at Fire Wave Sound Savannah', caption: 'Professional drum setup' },
+  { src: '/drums_2.jpg', alt: 'Drum tracking room Fire Wave Sound', caption: 'Acoustically treated live room' },
 ]
 
 export default function DrumTrackingContent() {
@@ -105,7 +105,7 @@ export default function DrumTrackingContent() {
                 There&apos;s a Difference Between Programmed Drums<br />and a Kit Played in an Actual Room.
               </Heading>
               <Text color="gray.400" fontSize="lg" lineHeight="tall">
-                At Fire Wave Studio in Richmond Hill, we record live drums in a dedicated tracking space designed to give the kit room to breathe. It&apos;s not about hype — it&apos;s about capturing a solid performance with proper mic placement, good gain staging, and attention to detail.
+                At Fire Wave Sound in Richmond Hill, we record live drums in a dedicated tracking space designed to give the kit room to breathe. It&apos;s not about hype — it&apos;s about capturing a solid performance with proper mic placement, good gain staging, and attention to detail.
               </Text>
               <Text color="gray.400" fontSize="lg" lineHeight="tall">
                 Whether you&apos;re tracking rock, country, indie, or something stripped back, we focus on getting a strong sound at the source so the mix doesn&apos;t have to fix what should&apos;ve been right from the start.
@@ -244,11 +244,11 @@ export default function DrumTrackingContent() {
 
       <FAQSection faqs={faqs} />
 
-      <TestimonialsSection />
+      {/* <TestimonialsSection /> */}
 
       <FinalCTA
         title="Ready to Track Drums?"
-        subtitle="Book a session at Fire Wave Studio and capture the drum sounds your music deserves. Serving bands from Savannah, Richmond Hill, and all of Coastal Georgia."
+        subtitle="Book a session at Fire Wave Sound and capture the drum sounds your music deserves. Serving bands from Savannah, Richmond Hill, and all of Coastal Georgia."
         primaryCta={{ text: 'Book Your Session', href: '/#contact' }}
         secondaryCta={{ text: 'View Full Pricing', href: '/#pricing' }}
       />

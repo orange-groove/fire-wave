@@ -39,7 +39,7 @@ export default function FirstSessionContent() {
             >
               <img
                 src="/control_room.jpg"
-                alt="Control room at Fire Wave Studio"
+                alt="Control room at Fire Wave Sound"
                 style={{
                   width: '100%',
                   height: '100%',
@@ -61,7 +61,7 @@ export default function FirstSessionContent() {
                 If you&apos;ve never recorded in a studio before, it&apos;s normal to feel unsure about how the day will go.
               </Text>
               <Text>
-                Here&apos;s what typically happens during a session at Fire Wave Studio in Richmond Hill, just outside Savannah.
+                Here&apos;s what typically happens during a session at Fire Wave Sound in Richmond Hill, just outside Savannah.
               </Text>
 
               {/* Before You Arrive */}
@@ -177,7 +177,7 @@ export default function FirstSessionContent() {
                 Recording Near Savannah
               </Heading>
               <Text>
-                Fire Wave Studio works with bands and artists throughout Savannah, Richmond Hill, Pooler, and Coastal Georgia.
+                Fire Wave Sound works with bands and artists throughout Savannah, Richmond Hill, Pooler, and Coastal Georgia.
               </Text>
               <Text>
                 If you&apos;re booking your first session and want to talk through what the day will look like, reach out and we&apos;ll map it out ahead of time.

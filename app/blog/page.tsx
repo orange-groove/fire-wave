@@ -2,13 +2,13 @@ import { Metadata } from 'next'
 import BlogIndexContent from './BlogIndexContent'
 
 export const metadata: Metadata = {
-  title: 'Blog | Fire Wave Studio',
-  description: 'Session notes, recording insights, and behind-the-scenes from Fire Wave Studio in Richmond Hill, GA.',
+  title: 'Blog | Fire Wave Sound',
+  description: 'Session notes, recording insights, and behind-the-scenes from Fire Wave Sound in Richmond Hill, GA.',
   openGraph: {
-    title: 'Blog | Fire Wave Studio',
-    description: 'Session notes, recording insights, and behind-the-scenes from Fire Wave Studio.',
+    title: 'Blog | Fire Wave Sound',
+    description: 'Session notes, recording insights, and behind-the-scenes from Fire Wave Sound.',
     url: 'https://www.firewave912.com/blog',
-    siteName: 'Fire Wave Studio',
+    siteName: 'Fire Wave Sound',
     locale: 'en_US',
     type: 'website',
   },

@@ -19,7 +19,7 @@ const sessionImages = [
   { src: '/artists/delta-circle/2.jpeg', alt: 'Delta Circle in the studio' },
   { src: '/artists/delta-circle/3.jpeg', alt: 'Delta Circle tracking' },
   { src: '/artists/delta-circle/4.jpeg', alt: 'Delta Circle session photo' },
-  { src: '/artists/delta-circle/5.jpeg', alt: 'Delta Circle at Fire Wave Studio' },
+  { src: '/artists/delta-circle/5.jpeg', alt: 'Delta Circle at Fire Wave Sound' },
   { src: '/artists/delta-circle/6.jpeg', alt: 'Delta Circle recording' },
   { src: '/artists/delta-circle/7.jpeg', alt: 'Delta Circle session' },
   { src: '/artists/delta-circle/8.jpeg', alt: 'Delta Circle in studio' },
@@ -38,7 +38,7 @@ export default function DeltaCirclePostContent() {
         <Reveal>
           <VStack spacing={8} align="stretch">
             <BlogHeader
-              title="Recording Delta Circle at Fire Wave Studio"
+              title="Recording Delta Circle at Fire Wave Sound"
               date="February 4, 2025"
               readTime="5 min read"
             />
@@ -53,7 +53,7 @@ export default function DeltaCirclePostContent() {
             >
               <img
                 src="/artists/delta-circle/1.jpeg"
-                alt="Delta Circle recording session at Fire Wave Studio"
+                alt="Delta Circle recording session at Fire Wave Sound"
                 style={{
                   width: '100%',
                   height: '100%',
@@ -72,7 +72,7 @@ export default function DeltaCirclePostContent() {
             >
               {/* Intro */}
               <Text>
-                Delta Circle came into Fire Wave Studio in Richmond Hill — just outside Savannah, GA — to track a batch of songs. The goal was simple: capture the band&apos;s live energy first, then build the record from that foundation without overcomplicating the process.
+                Delta Circle came into Fire Wave Sound in Richmond Hill — just outside Savannah, GA — to track a batch of songs. The goal was simple: capture the band&apos;s live energy first, then build the record from that foundation without overcomplicating the process.
               </Text>
 
               {/* Session Photos Carousel */}

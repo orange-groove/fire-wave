@@ -101,7 +101,7 @@ export default function About() {
               fontSize="md"
               lineHeight="tall"
             >
-              From tracking live drums in our band-ready room to delivering polished masters, Fire Wave Studio gives Savannah-area artists the tools and expertise to make music that sounds the way they imagined it.
+              From tracking live drums in our band-ready room to delivering polished masters, Fire Wave Sound gives Savannah-area artists the tools and expertise to make music that sounds the way they imagined it.
             </Text>
           </VStack>
         </Reveal>

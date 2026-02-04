@@ -99,7 +99,7 @@ export default function LiveSoundSavannahContent() {
                 Live Sound Throughout Coastal Georgia
               </Heading>
               <Text color="gray.400" fontSize="lg" lineHeight="tall">
-                Fire Wave Studio provides live sound for events throughout Savannah, Richmond Hill, Pooler, Hinesville, and the surrounding area.
+                Fire Wave Sound provides live sound for events throughout Savannah, Richmond Hill, Pooler, Hinesville, and the surrounding area.
               </Text>
               <Text color="gray.400" fontSize="lg" lineHeight="tall">
                 We handle system setup, stage routing, soundcheck, and front-of-house mixing for weddings, local venues, private events, and community festivals. The goal is simple: clear vocals, balanced instruments, and a mix that feels controlled from start to finish.
@@ -230,7 +230,7 @@ export default function LiveSoundSavannahContent() {
 
       <FAQSection faqs={faqs} />
 
-      <TestimonialsSection />
+      {/* <TestimonialsSection /> */}
 
       <FinalCTA
         title="Let's Make Your Event Sound Amazing"

@@ -37,7 +37,7 @@ const posts = [
   },
   {
     slug: 'recording-delta-circle-fire-wave-studio',
-    title: 'Recording Delta Circle at Fire Wave Studio',
+    title: 'Recording Delta Circle at Fire Wave Sound',
     excerpt: 'How we built Delta Circle\'s record from a live scratch take—keeping the energy while layering guitars, bass, and vocals.',
     date: 'February 4, 2025',
     image: '/artists/delta-circle/1.jpeg',
@@ -55,7 +55,7 @@ export default function BlogIndexContent() {
                 Blog
               </Heading>
               <Text color="gray.400" fontSize="lg">
-                Session notes and recording insights from Fire Wave Studio.
+                Session notes and recording insights from Fire Wave Sound.
               </Text>
             </VStack>
 

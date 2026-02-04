@@ -56,8 +56,8 @@ const steps = [
 
 const faqs = [
   {
-    question: 'What makes Fire Wave Studio different from other Savannah recording studios?',
-    answer: 'Fire Wave Studio is built specifically for bands and artists who want to capture authentic performances. Our live room is designed for full band tracking with live drums, and our engineer understands how to get the sounds that translate to streaming platforms. We focus on efficiency and collaboration, not running up hours.',
+    question: 'What makes Fire Wave Sound different from other Savannah recording studios?',
+    answer: 'Fire Wave Sound is built specifically for bands and artists who want to capture authentic performances. Our live room is designed for full band tracking with live drums, and our engineer understands how to get the sounds that translate to streaming platforms. We focus on efficiency and collaboration, not running up hours.',
   },
   {
     question: 'How much does it cost to record at your Savannah studio?',
@@ -78,7 +78,7 @@ const faqs = [
 ]
 
 const images = [
-  { src: '/drums.jpg', alt: 'Live drum setup at Fire Wave Studio Savannah', caption: 'Band-ready tracking room' },
+  { src: '/drums.jpg', alt: 'Live drum setup at Fire Wave Sound Savannah', caption: 'Band-ready tracking room' },
   { src: '/board.jpg', alt: 'Mixing console at Fire Wave recording studio', caption: 'Professional control room' },
 ]
 
@@ -105,7 +105,7 @@ export default function SavannahRecordingStudioContent() {
                 Professional Recording Near Savannah
               </Heading>
               <Text color="gray.400" fontSize="lg" lineHeight="tall">
-                If you&apos;re looking for a professional recording studio near Savannah, Fire Wave Studio offers the space, gear, and engineering to capture performances the right way.
+                If you&apos;re looking for a professional recording studio near Savannah, Fire Wave Sound offers the space, gear, and engineering to capture performances the right way.
               </Text>
               <Text color="gray.400" fontSize="lg" lineHeight="tall">
                 Located in Richmond Hill, just minutes from Savannah, our studio is built for real musicians. Whether you&apos;re tracking a full band, cutting live drums, recording vocals, or building an acoustic record from the ground up, we provide a focused environment designed for serious work.
@@ -193,7 +193,7 @@ export default function SavannahRecordingStudioContent() {
 
       <FinalCTA
         title="Ready to Record?"
-        subtitle="Book your session at Fire Wave Studio and let's make something you're proud of. Serving Savannah, Richmond Hill, Pooler, and all of Coastal Georgia."
+        subtitle="Book your session at Fire Wave Sound and let's make something you're proud of. Serving Savannah, Richmond Hill, Pooler, and all of Coastal Georgia."
         primaryCta={{ text: 'Book Studio Time', href: '/#contact' }}
         secondaryCta={{ text: 'View Pricing', href: '/#pricing' }}
       />

@@ -46,7 +46,7 @@ export default function RecordingCostContent() {
             >
               <img
                 src="/board.jpg"
-                alt="Recording studio mixing board at Fire Wave Studio"
+                alt="Recording studio mixing board at Fire Wave Sound"
                 style={{
                   width: '100%',
                   height: '100%',
@@ -90,7 +90,7 @@ export default function RecordingCostContent() {
                 Rates vary based on the size of the studio, available gear, and the engineer&apos;s experience.
               </Text>
               <Text>
-                At Fire Wave Studio, our standard rate is <strong>$60 per hour</strong>, with package options available for singles, EPs, and full projects.
+                At Fire Wave Sound, our standard rate is <strong>$60 per hour</strong>, with package options available for singles, EPs, and full projects.
               </Text>
 
               {/* What Affects Cost */}

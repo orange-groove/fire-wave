@@ -99,7 +99,7 @@ export default function MixingMasteringContent() {
                 You&apos;ve Captured the Performance.<br />Now It&apos;s Time to Shape It.
               </Heading>
               <Text color="gray.400" fontSize="lg" lineHeight="tall">
-                At Fire Wave Studio, mixing isn&apos;t about throwing presets on tracks — it&apos;s about building depth, clarity, and impact so your music translates everywhere. From phones to cars to full-range systems, your record should hit with confidence.
+                At Fire Wave Sound, mixing isn&apos;t about throwing presets on tracks — it&apos;s about building depth, clarity, and impact so your music translates everywhere. From phones to cars to full-range systems, your record should hit with confidence.
               </Text>
               <Text color="gray.400" fontSize="lg" lineHeight="tall">
                 We mix with intention. Every balance choice, EQ move, and automation pass is made to support the emotion of the song. If the chorus needs to lift, it lifts. If the low end needs weight without mud, it gets it. The goal isn&apos;t loudness for the sake of loudness — it&apos;s control, punch, and musicality.
@@ -244,7 +244,7 @@ export default function MixingMasteringContent() {
 
       <FAQSection faqs={faqs} />
 
-      <TestimonialsSection />
+      {/* <TestimonialsSection /> */}
 
       <FinalCTA
         title="Ready to Get Your Music Mixed?"

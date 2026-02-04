@@ -39,7 +39,7 @@ export default function ProofSection() {
                 Hear The Difference
               </Heading>
               <Text color="gray.400" maxW="xl">
-                From live drum tracking to final masters — see what we do at Fire Wave Studio.
+                From live drum tracking to final masters — see what we do at Fire Wave Sound.
               </Text>
             </VStack>
 

@@ -40,7 +40,7 @@ export default function DrumPrepContent() {
             >
               <img
                 src="/drums.jpg"
-                alt="Drum kit ready for recording at Fire Wave Studio"
+                alt="Drum kit ready for recording at Fire Wave Sound"
                 style={{
                   width: '100%',
                   height: '100%',
@@ -224,7 +224,7 @@ export default function DrumPrepContent() {
                 Want to Track Drums Near Savannah?
               </Heading>
               <Text>
-                Fire Wave Studio records live drums in Richmond Hill, just outside Savannah. If you&apos;re planning a session and want to talk through setup, click vs no click, or how to structure the day, reach out.
+                Fire Wave Sound records live drums in Richmond Hill, just outside Savannah. If you&apos;re planning a session and want to talk through setup, click vs no click, or how to structure the day, reach out.
               </Text>
               <Text>
                 And if you&apos;re specifically looking for drum tracking near Savannah, you can read more here:{' '}

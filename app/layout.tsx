@@ -31,11 +31,11 @@ const zillaSlab = Zilla_Slab({
 });
 
 export const metadata: Metadata = {
-  title: "Fire Wave Studio | Savannah Recording Studio & Live Sound (Richmond Hill, GA)",
+  title: "Fire Wave Sound | Savannah Recording Studio & Live Sound (Richmond Hill, GA)",
   description: "Professional recording studio serving Savannah & Richmond Hill, GA. Band-ready live drum tracking, mixing, mastering, and live sound services.",
   keywords: ["Savannah recording studio", "Richmond Hill GA", "live sound", "mixing", "mastering", "drum tracking", "Coastal Georgia", "audio production", "bands"],
-  authors: [{ name: "Fire Wave Studio" }],
-  creator: "Fire Wave Studio",
+  authors: [{ name: "Fire Wave Sound" }],
+  creator: "Fire Wave Sound",
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },
@@ -48,10 +48,10 @@ export const metadata: Metadata = {
     apple: '/apple-touch-icon.png',
   },
   openGraph: {
-    title: "Fire Wave Studio | Savannah Recording Studio & Live Sound",
+    title: "Fire Wave Sound | Savannah Recording Studio & Live Sound",
     description: "Professional recording studio serving Savannah & Richmond Hill, GA. Band-ready live drum tracking, mixing, mastering, and live sound services.",
     url: "https://www.firewave912.com",
-    siteName: "Fire Wave Studio",
+    siteName: "Fire Wave Sound",
     images: [
       {
         url: 'https://www.firewave912.com/og-image.jpg',
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Fire Wave Studio | Savannah Recording Studio & Live Sound",
+    title: "Fire Wave Sound | Savannah Recording Studio & Live Sound",
     description: "Professional recording studio serving Savannah & Richmond Hill, GA. Band-ready live drum tracking, mixing, mastering, and live sound services.",
     images: ['https://www.firewave912.com/og-image.jpg'],
     creator: '@firewavestudio',
@@ -115,7 +115,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": ["LocalBusiness", "MusicRecordingStudio"],
               "@id": "https://www.firewave912.com",
-              "name": "Fire Wave Studio",
+              "name": "Fire Wave Sound",
               "alternateName": "Fire Wave Sound",
               "description": "Savannah recording studio serving Richmond Hill, GA. Professional band-ready live drum tracking, mixing, mastering, and live sound services for artists throughout Coastal Georgia.",
               "url": "https://www.firewave912.com",
