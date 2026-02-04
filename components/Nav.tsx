@@ -158,6 +158,19 @@ export default function Nav() {
                 </Menu>
 
                 <NavLink href="#pricing">Pricing</NavLink>
+                <Link href="/blog" passHref>
+                  <Text
+                    px={2}
+                    py={1}
+                    _hover={{ color: 'brand.400' }}
+                    cursor="pointer"
+                    color="white"
+                    fontWeight="500"
+                    transition="color 0.2s ease"
+                  >
+                    Blog
+                  </Text>
+                </Link>
                 <NavLink href="#contact">Contact</NavLink>
               </HStack>
             )}
@@ -214,6 +227,17 @@ export default function Nav() {
               </VStack>
 
               <NavLink href="#pricing">Pricing</NavLink>
+              <Link href="/blog" passHref>
+                <Text
+                  px={2}
+                  py={1}
+                  color="white"
+                  fontWeight="500"
+                  _hover={{ color: 'brand.400' }}
+                >
+                  Blog
+                </Text>
+              </Link>
               <NavLink href="#contact">Contact</NavLink>
             </Stack>
           </Box>

@@ -25,7 +25,7 @@ export default function ArtistsSection() {
               overflow="hidden"
             >
               <img
-                src="/delta-circle-logo.jpg"
+                src="/delta-circle/delta-circle-logo.jpg"
                 alt="Delta Circle"
                 style={{
                   width: '100%',
