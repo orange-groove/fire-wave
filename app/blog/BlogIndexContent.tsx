@@ -15,6 +15,27 @@ import Reveal from '../../components/Reveal'
 
 const posts = [
   {
+    slug: 'what-to-expect-first-recording-session',
+    title: 'What to Expect During Your First Recording Session',
+    excerpt: 'Never recorded in a studio before? Here\'s what typically happens—setup, tracking, breaks, and how to prepare.',
+    date: 'February 4, 2025',
+    image: '/control_room.jpg',
+  },
+  {
+    slug: 'how-to-prepare-for-drum-tracking-session',
+    title: 'How to Prepare for a Drum Tracking Session',
+    excerpt: 'Get the most out of your drum tracking session—tips on kit selection, tuning, click tracks, and showing up prepared.',
+    date: 'February 4, 2025',
+    image: '/drums.jpg',
+  },
+  {
+    slug: 'how-much-does-it-cost-to-record-a-song-savannah',
+    title: 'How Much Does It Cost to Record a Song in Savannah?',
+    excerpt: 'A realistic breakdown of recording studio costs—hourly rates, what affects pricing, and budget ranges for singles, EPs, and albums.',
+    date: 'February 4, 2025',
+    image: '/board.jpg',
+  },
+  {
     slug: 'recording-delta-circle-fire-wave-studio',
     title: 'Recording Delta Circle at Fire Wave Studio',
     excerpt: 'How we built Delta Circle\'s record from a live scratch take—keeping the energy while layering guitars, bass, and vocals.',
@@ -41,7 +62,7 @@ export default function BlogIndexContent() {
             <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8}>
               {posts.map((post) => (
                 <Link key={post.slug} href={`/blog/${post.slug}`} passHref legacyBehavior>
-                  <ChakraLink _hover={{ textDecoration: 'none' }}>
+                  <ChakraLink _hover={{ textDecoration: 'none' }} h="full" display="block">
                     <Box
                       p={6}
                       bg="#141414"
@@ -49,41 +70,44 @@ export default function BlogIndexContent() {
                       border="1px solid"
                       borderColor="gray.800"
                       transition="all 0.3s ease"
+                      h="full"
+                      display="flex"
+                      flexDirection="column"
                       _hover={{
                         borderColor: 'brand.500',
                         transform: 'translateY(-4px)',
                       }}
                     >
-                      <VStack align="start" spacing={4}>
-                        {post.image && (
-                          <Box
-                            w="full"
-                            h="180px"
-                            rounded="md"
-                            overflow="hidden"
-                            bg="#0a0a0a"
-                          >
-                            <img
-                              src={post.image}
-                              alt={post.title}
-                              style={{
-                                width: '100%',
-                                height: '100%',
-                                objectFit: 'cover',
-                              }}
-                            />
-                          </Box>
-                        )}
-                        <Text color="gray.500" fontSize="sm">
-                          {post.date}
-                        </Text>
-                        <Heading as="h2" size="md" color="white">
-                          {post.title}
-                        </Heading>
-                        <Text color="gray.400" fontSize="sm">
-                          {post.excerpt}
-                        </Text>
-                      </VStack>
+                      {post.image && (
+                        <Box
+                          w="full"
+                          h="180px"
+                          rounded="md"
+                          overflow="hidden"
+                          bg="#0a0a0a"
+                          flexShrink={0}
+                          mb={4}
+                        >
+                          <img
+                            src={post.image}
+                            alt={post.title}
+                            style={{
+                              width: '100%',
+                              height: '100%',
+                              objectFit: 'cover',
+                            }}
+                          />
+                        </Box>
+                      )}
+                      <Text color="gray.500" fontSize="sm" mb={2}>
+                        {post.date}
+                      </Text>
+                      <Heading as="h2" size="md" color="white" mb={2} noOfLines={2}>
+                        {post.title}
+                      </Heading>
+                      <Text color="gray.400" fontSize="sm" noOfLines={3} flex={1}>
+                        {post.excerpt}
+                      </Text>
                     </Box>
                   </ChakraLink>
                 </Link>
