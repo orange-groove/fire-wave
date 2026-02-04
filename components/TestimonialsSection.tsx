@@ -80,7 +80,7 @@ export default function TestimonialsSection() {
 
                     {/* Quote */}
                     <Text color="gray.300" fontSize="md" fontStyle="italic">
-                      "{testimonial.quote}"
+                      &ldquo;{testimonial.quote}&rdquo;
                     </Text>
 
                     {/* Attribution */}
