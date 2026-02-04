@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://firewave912.com/sitemap.xml',
+    sitemap: 'https://www.firewave912.com/sitemap.xml',
   }
 }

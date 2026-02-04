@@ -44,11 +44,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Fire Wave Sound | Recording Studio & Live Sound",
     description: "Professional recording studio offering audio recording, mixing, mastering, and live sound production in Richmond Hill, GA",
-    url: "https://firewave912.com",
+    url: "https://www.firewave912.com",
     siteName: "Fire Wave Sound",
     images: [
       {
-        url: 'https://firewave912.com/og-image.jpg',
+        url: 'https://www.firewave912.com/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Fire Wave Sound - Recording Studio & Live Sound Production',
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: "Fire Wave Sound | Recording Studio & Live Sound",
     description: "Professional recording studio offering audio recording, mixing, mastering, and live sound production in Richmond Hill, GA",
-    images: ['https://firewave912.com/og-image.jpg'],
+    images: ['https://www.firewave912.com/og-image.jpg'],
     creator: '@firewavestudio',
   },
   robots: {
@@ -74,6 +74,9 @@ export const metadata: Metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
+  },
+  alternates: {
+    canonical: 'https://www.firewave912.com',
   },
 };
 
@@ -105,10 +108,10 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
-              "@id": "https://firewave912.com",
+              "@id": "https://www.firewave912.com",
               "name": "Fire Wave Sound",
               "description": "Professional recording studio offering audio recording, mixing, mastering, and live sound production in Richmond Hill, GA",
-              "url": "https://firewave912.com",
+              "url": "https://www.firewave912.com",
               "logo": "https://firewave912.com/logo.png",
               "image": "https://firewave912.com/og-image.jpg",
               "telephone": "",
