@@ -14,7 +14,7 @@ export default function ArtistsSection() {
       <Container maxW="container.lg">
         <VStack spacing={10}>
           <Heading as="h2" size="lg" color="white" textAlign="center">
-            Artists We've Worked With
+            Artists We&apos;ve Worked With
           </Heading>
 
           <VStack spacing={4}>

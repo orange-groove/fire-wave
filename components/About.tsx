@@ -6,7 +6,6 @@ import {
   Heading,
   Text,
   VStack,
-  HStack,
   Icon,
   SimpleGrid,
 } from '@chakra-ui/react'
@@ -60,7 +59,7 @@ export default function About() {
                 Musicians First. Results That Hit.
               </Heading>
               <Text color="gray.400" maxW="2xl">
-                We're not just engineers — we're players who understand what it takes to make a record that connects.
+                We&apos;re not just engineers — we&apos;re players who understand what it takes to make a record that connects.
               </Text>
             </VStack>
 
