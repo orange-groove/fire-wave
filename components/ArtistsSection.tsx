@@ -6,7 +6,11 @@ import {
   Heading,
   Text,
   VStack,
+  HStack,
+  Link as ChakraLink,
+  Icon,
 } from '@chakra-ui/react'
+import { FaFacebook, FaInstagram } from 'react-icons/fa'
 
 export default function ArtistsSection() {
   return (
@@ -27,6 +31,8 @@ export default function ArtistsSection() {
               <img
                 src="/artists/delta-circle/delta-circle-logo.jpg"
                 alt="Delta Circle"
+                loading="lazy"
+                decoding="async"
                 style={{
                   width: '100%',
                   height: '100%',
@@ -37,6 +43,26 @@ export default function ArtistsSection() {
             <Text color="gray.400" fontSize="md">
               Delta Circle – Savannah, GA
             </Text>
+            <HStack spacing={4} pt={1}>
+              <ChakraLink
+                href="https://www.facebook.com/deltacircle"
+                isExternal
+                aria-label="Delta Circle on Facebook"
+                color="gray.400"
+                _hover={{ color: 'brand.400' }}
+              >
+                <Icon as={FaFacebook} boxSize={5} />
+              </ChakraLink>
+              <ChakraLink
+                href="https://www.instagram.com/deltacircle/"
+                isExternal
+                aria-label="Delta Circle on Instagram"
+                color="gray.400"
+                _hover={{ color: 'brand.400' }}
+              >
+                <Icon as={FaInstagram} boxSize={5} />
+              </ChakraLink>
+            </HStack>
           </VStack>
         </VStack>
       </Container>
