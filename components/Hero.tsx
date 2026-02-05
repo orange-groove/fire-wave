@@ -156,7 +156,7 @@ export default function Hero() {
             sx={getAnimationStyle(0.3)}
           >
             <WrapItem>
-              <HStack spacing={2}>
+              {/* <HStack spacing={2}>
                 <HStack spacing={0.5} color="brand.400">
                   <Icon as={FaStar} boxSize={3} />
                   <Icon as={FaStar} boxSize={3} />
@@ -165,7 +165,7 @@ export default function Hero() {
                   <Icon as={FaStar} boxSize={3} />
                 </HStack>
                 <Text>Top-rated on Google</Text>
-              </HStack>
+              </HStack> */}
             </WrapItem>
             <WrapItem>
               <HStack spacing={2}>
