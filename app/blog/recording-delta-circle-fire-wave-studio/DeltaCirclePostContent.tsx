@@ -80,7 +80,7 @@ export default function DeltaCirclePostContent() {
             >
               {/* Intro */}
               <Text>
-                Delta Circle came into Fire Wave Sound in Richmond Hill — just outside Savannah, GA — to track a batch of songs. The goal was simple: capture the band&apos;s live energy first, then build the record from that foundation without overcomplicating the process.
+                Delta Circle came into Fire Wave Sound to track two cover songs. The goal was simple: capture the band&apos;s live energy first, then build the record from that foundation without overcomplicating the process.
               </Text>
 
               {/* Session Photos Carousel */}
