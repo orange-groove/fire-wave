@@ -165,9 +165,24 @@ export default function Footer() {
         <Divider borderColor="gray.800" my={8} />
 
         {/* Copyright */}
-        <Text color="gray.500" fontSize="sm" textAlign="center">
-          &copy; {currentYear} Fire Wave Sound. All rights reserved.
-        </Text>
+        <VStack spacing={3} align="center">
+          <Text color="gray.500" fontSize="sm" textAlign="center">
+            &copy; {currentYear} Fire Wave Sound. All rights reserved.
+          </Text>
+
+          <Text color="gray.500" fontSize="sm" textAlign="center">
+            Made with love by Orange Groove Solutions
+            <Box as="span" display="inline-block" verticalAlign="middle" ms={2} pb={6}>
+              <Image
+                src="/orange-groove-mark.png"
+                alt=""
+                width={50}
+                height={50}
+                style={{ objectFit: 'contain' }}
+              />
+            </Box>
+          </Text>
+        </VStack>
       </Container>
     </Box>
   )
