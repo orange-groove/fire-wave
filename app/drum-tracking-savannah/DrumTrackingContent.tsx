@@ -57,7 +57,7 @@ const steps = [
 const faqs = [
   {
     question: 'What makes Fire Wave a good choice for drum tracking in Savannah?',
-    answer: 'Our studio was designed from the ground up with live drums in mind. The room has proper acoustics for natural drum sounds—not a converted bedroom or cramped space. Combined with our premium mic collection and engineering experience, we consistently deliver drum tracks that bands love.',
+    answer: 'We record live drums in a dedicated tracking space that gives us the flexibility to shape the sound properly. We focus on tuning, mic placement, and getting tones right at the source instead of relying on heavy processing later. That approach consistently delivers drum tracks with punch, clarity, and headroom.',
   },
   {
     question: 'Do I need to bring my own drum kit?',
