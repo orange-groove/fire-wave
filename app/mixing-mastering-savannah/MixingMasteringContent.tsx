@@ -113,6 +113,22 @@ export default function MixingMasteringContent() {
                 </Link>, at home, or at another facility, we&apos;ll bring them into a focused mix environment and refine them into a cohesive final product.
               </Text>
 
+              <Text color="gray.500" fontSize="md">
+                Still planning the recording side? Start with{' '}
+                <Link href="/drum-tracking-savannah" passHref legacyBehavior>
+                  <ChakraLink color="brand.400" _hover={{ color: 'brand.300' }}>
+                    drum tracking
+                  </ChakraLink>
+                </Link>{' '}
+                and this quick timeline guide:{' '}
+                <Link href="/blog/how-long-does-it-take-to-record-a-song" passHref legacyBehavior>
+                  <ChakraLink color="brand.400" _hover={{ color: 'brand.300' }}>
+                    how long it takes to record a song
+                  </ChakraLink>
+                </Link>
+                .
+              </Text>
+
               <Heading as="h3" size="md" color="white" pt={4}>
                 What You Can Expect
               </Heading>

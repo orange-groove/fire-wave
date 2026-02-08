@@ -131,6 +131,27 @@ export default function DrumTrackingContent() {
                     </ChakraLink>
                   </Link>.
                 </Text>
+                <Text color="gray.500" fontSize="md" mt={2}>
+                  Helpful reads:{' '}
+                  <Link href="/blog/recording-live-drums-vs-programmed-drums" passHref legacyBehavior>
+                    <ChakraLink color="brand.400" _hover={{ color: 'brand.300' }}>
+                      live vs programmed drums
+                    </ChakraLink>
+                  </Link>
+                  ,{' '}
+                  <Link href="/blog/how-to-prepare-for-drum-tracking-session" passHref legacyBehavior>
+                    <ChakraLink color="brand.400" _hover={{ color: 'brand.300' }}>
+                      how to prepare for drum tracking
+                    </ChakraLink>
+                  </Link>
+                  , and{' '}
+                  <Link href="/blog/what-should-you-bring-to-a-studio-session" passHref legacyBehavior>
+                    <ChakraLink color="brand.400" _hover={{ color: 'brand.300' }}>
+                      what to bring to a studio session
+                    </ChakraLink>
+                  </Link>
+                  .
+                </Text>
               </Box>
             </VStack>
           </Reveal>

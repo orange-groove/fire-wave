@@ -15,6 +15,27 @@ import Reveal from '../../components/Reveal'
 
 const posts = [
   {
+    slug: 'recording-live-drums-vs-programmed-drums',
+    title: 'Recording Live Drums vs Programmed Drums — What’s the Difference?',
+    excerpt: 'A practical comparison of feel, tone, workflow, budget, and genre—plus when a hybrid approach makes the most sense.',
+    date: 'February 4, 2026',
+    image: '/drums.jpg',
+  },
+  {
+    slug: 'how-long-does-it-take-to-record-a-song',
+    title: 'How Long Does It Take to Record a Song?',
+    excerpt: 'A realistic timeline for tracking, vocals, editing, mixing, and mastering—plus what speeds sessions up (and what slows them down).',
+    date: 'February 4, 2026',
+    image: '/board.jpg',
+  },
+  {
+    slug: 'what-should-you-bring-to-a-studio-session',
+    title: 'What Should You Bring to a Studio Session?',
+    excerpt: 'A practical checklist for guitarists, drummers, vocalists, and keys/bass players—plus what you don’t need and how to avoid wasted time.',
+    date: 'February 4, 2026',
+    image: '/guitars.jpg',
+  },
+  {
     slug: 'what-to-expect-first-recording-session',
     title: 'What to Expect During Your First Recording Session',
     excerpt: 'Never recorded in a studio before? Here\'s what typically happens—setup, tracking, breaks, and how to prepare.',

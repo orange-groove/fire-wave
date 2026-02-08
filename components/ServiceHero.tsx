@@ -45,10 +45,17 @@ export default function ServiceHero({
     : heroItem
 
   const handleScrollTo = (id: string) => {
-    const element = document.querySelector(id)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
+    // Hash links scroll within the page; path links navigate.
+    if (id.startsWith('#')) {
+      const element = document.querySelector(id)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+      }
+      return
     }
+
+    // Allow passing real routes like "/contact"
+    window.location.assign(id)
   }
 
   return (

@@ -131,6 +131,21 @@ export default function SavannahRecordingStudioContent() {
                     </ChakraLink>
                   </Link>.
                 </Text>
+                <Text color="gray.500" fontSize="md" mt={2}>
+                  Planning your first day? Read{' '}
+                  <Link href="/blog/what-should-you-bring-to-a-studio-session" passHref legacyBehavior>
+                    <ChakraLink color="brand.400" _hover={{ color: 'brand.300' }}>
+                      what to bring to a studio session
+                    </ChakraLink>
+                  </Link>{' '}
+                  and{' '}
+                  <Link href="/blog/how-long-does-it-take-to-record-a-song" passHref legacyBehavior>
+                    <ChakraLink color="brand.400" _hover={{ color: 'brand.300' }}>
+                      how long it takes to record a song
+                    </ChakraLink>
+                  </Link>
+                  .
+                </Text>
               </Box>
             </VStack>
           </Reveal>
