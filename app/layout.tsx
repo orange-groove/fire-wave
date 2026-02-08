@@ -89,6 +89,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Favicons (Google prefers a square >= 48px) */}
+        <link rel="icon" href="/favicon-48x48.png" type="image/png" sizes="48x48" />
+        <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
+        <link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         {/* Google Analytics - deferred to lazyOnload to not block LCP */}
         <Script
