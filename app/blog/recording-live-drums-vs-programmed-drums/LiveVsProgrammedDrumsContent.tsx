@@ -247,7 +247,7 @@ export default function LiveVsProgrammedDrumsContent() {
                     .
                   </Text>
                   <HStack spacing={4} flexWrap="wrap">
-                    <Button as={Link} href="/drum-tracking" variant="brand">
+                    <Button as={Link} href="/drum-tracking-savannah" variant="brand">
                       Drum Tracking
                     </Button>
                     <Button as={Link} href="/contact" variant="outline" borderColor="gray.600" color="white">

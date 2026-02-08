@@ -87,7 +87,7 @@ export default function RecordingStudioPoolerContent() {
                 <Text color="gray.300" lineHeight="1.8">
                   For many Pooler bands, the drum sound is the difference between a demo and a release. We help you get punch,
                   clarity, and consistency from the kit so the rest of the track builds naturally. Start here:{' '}
-                  <ChakraLink as={Link} href="/drum-tracking" color="brand.400" _hover={{ color: 'brand.300' }}>
+                  <ChakraLink as={Link} href="/drum-tracking-savannah" color="brand.400" _hover={{ color: 'brand.300' }}>
                     drum tracking
                   </ChakraLink>
                   .
@@ -120,7 +120,7 @@ export default function RecordingStudioPoolerContent() {
                   deliverables with clarity. If you want the process details, see{' '}
                   <ChakraLink
                     as={Link}
-                    href="/mixing-and-mastering-savannah"
+                    href="/mixing-mastering-savannah"
                     color="brand.400"
                     _hover={{ color: 'brand.300' }}
                   >

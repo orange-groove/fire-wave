@@ -98,7 +98,7 @@ export default function StudioSessionChecklistContent() {
               <Text>
                 If your kit is being used, fresh or trusted heads make a noticeable difference. Tuning before the session saves
                 time once mics go up. If you want to go deeper on drum-specific prep, our{' '}
-                <ChakraLink as={Link} href="/drum-tracking" color="brand.400" _hover={{ color: 'brand.300' }}>
+                <ChakraLink as={Link} href="/drum-tracking-savannah" color="brand.400" _hover={{ color: 'brand.300' }}>
                   drum tracking
                 </ChakraLink>{' '}
                 page is a good starting point.

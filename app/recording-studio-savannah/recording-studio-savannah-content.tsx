@@ -92,7 +92,7 @@ export default function RecordingStudioSavannahContent() {
                   Savannah bands often come in with a strong live feel—our job is to capture it without fighting the room.
                   We dial in the kit, mic it with intention, and print tones that already sit where they should. Learn more
                   about how we approach drums on our{' '}
-                  <ChakraLink as={Link} href="/drum-tracking" color="brand.400" _hover={{ color: 'brand.300' }}>
+                  <ChakraLink as={Link} href="/drum-tracking-savannah" color="brand.400" _hover={{ color: 'brand.300' }}>
                     drum tracking
                   </ChakraLink>{' '}
                   page.
@@ -127,7 +127,7 @@ export default function RecordingStudioSavannahContent() {
                   When it&apos;s time to finalize, we master for loudness and clarity without crushing dynamics. Details on our{' '}
                   <ChakraLink
                     as={Link}
-                    href="/mixing-and-mastering-savannah"
+                    href="/mixing-mastering-savannah"
                     color="brand.400"
                     _hover={{ color: 'brand.300' }}
                   >

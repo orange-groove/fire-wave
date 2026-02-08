@@ -87,7 +87,7 @@ export default function RecordingStudioRichmondHillContent() {
                 <Text color="gray.300" lineHeight="1.8">
                   If you want drums that feel like a player (not a preset), we track them. We work through tuning, mic placement,
                   and phase so the kit hits hard without getting harsh. If you want the deeper breakdown, see{' '}
-                  <ChakraLink as={Link} href="/drum-tracking" color="brand.400" _hover={{ color: 'brand.300' }}>
+                  <ChakraLink as={Link} href="/drum-tracking-savannah" color="brand.400" _hover={{ color: 'brand.300' }}>
                     drum tracking
                   </ChakraLink>
                   .
@@ -120,7 +120,7 @@ export default function RecordingStudioRichmondHillContent() {
                   and we master for streaming without flattening everything. More details on{' '}
                   <ChakraLink
                     as={Link}
-                    href="/mixing-and-mastering-savannah"
+                    href="/mixing-mastering-savannah"
                     color="brand.400"
                     _hover={{ color: 'brand.300' }}
                   >

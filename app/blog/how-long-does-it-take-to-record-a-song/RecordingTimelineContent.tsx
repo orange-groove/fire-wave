@@ -138,7 +138,7 @@ export default function RecordingTimelineContent() {
               <Text>
                 This stage shapes how the song translates on Spotify, Apple Music, car speakers, and larger systems.
                 If you&apos;re curious about the finishing side, read our{' '}
-                <ChakraLink as={Link} href="/mixing-and-mastering-savannah" color="brand.400" _hover={{ color: 'brand.300' }}>
+                <ChakraLink as={Link} href="/mixing-mastering-savannah" color="brand.400" _hover={{ color: 'brand.300' }}>
                   mixing &amp; mastering
                 </ChakraLink>{' '}
                 page.
@@ -231,7 +231,7 @@ export default function RecordingTimelineContent() {
                     .
                   </Text>
                   <HStack spacing={4} flexWrap="wrap">
-                    <Button as={Link} href="/drum-tracking" variant="brand">
+                    <Button as={Link} href="/drum-tracking-savannah" variant="brand">
                       Drum Tracking
                     </Button>
                     <Button as={Link} href="/contact" variant="outline" borderColor="gray.600" color="white">
