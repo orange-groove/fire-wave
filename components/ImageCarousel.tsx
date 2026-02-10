@@ -225,6 +225,24 @@ export default function ImageCarousel({
           </Box>
         </ModalContent>
       </Modal>
+
+      {/* Keep slick-theme styles, but avoid loading the slick icon font */}
+      <style jsx global>{`
+        #${id} .slick-prev:before,
+        #${id} .slick-next:before,
+        #${id} .slick-dots li button:before {
+          font-family: inherit !important;
+        }
+        #${id} .slick-prev:before {
+          content: '‹' !important;
+        }
+        #${id} .slick-next:before {
+          content: '›' !important;
+        }
+        #${id} .slick-dots li button:before {
+          content: '•' !important;
+        }
+      `}</style>
     </>
   )
 }
