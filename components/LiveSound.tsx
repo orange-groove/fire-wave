@@ -57,9 +57,8 @@ const packages: Package[] = [
     ],
     includes: [
       '24-channel digital console',
-      'Up to 16 inputs',
       '4 monitor mixes',
-      'Drum mic kit (kick, snare, overheads)',
+      'Drum mic kit',
       '5 vocal microphones',
       '8-channel DI rack',
       'On-site engineer (up to 6 hours)',

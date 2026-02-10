@@ -8,7 +8,7 @@ import Hero from '../components/Hero'
 const ProofSection = dynamic(() => import('../components/ProofSection'), { ssr: false })
 const About = dynamic(() => import('../components/About'), { ssr: false })
 const Services = dynamic(() => import('../components/Services'), { ssr: false })
-const ArtistsSection = dynamic(() => import('../components/ArtistsSection'), { ssr: false })
+// const ArtistsSection = dynamic(() => import('../components/ArtistsSection'), { ssr: false })
 const Gallery = dynamic(() => import('../components/Gallery'), { ssr: false })
 const Pricing = dynamic(() => import('../components/Pricing'), { ssr: false })
 const LiveSound = dynamic(() => import('../components/LiveSound'), { ssr: false })
@@ -22,7 +22,7 @@ export default function Home() {
       <ProofSection />
       <About />
       <Services />
-      <ArtistsSection />
+      {/* <ArtistsSection /> */}
       <Gallery />
       <Pricing />
       <LiveSound />
