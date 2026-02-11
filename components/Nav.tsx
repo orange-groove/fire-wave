@@ -19,6 +19,7 @@ import {
 } from '@chakra-ui/react'
 import { HamburgerIcon, CloseIcon, ChevronDownIcon } from '@chakra-ui/icons'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 
 const NavLink = ({ children, href }: { children: React.ReactNode; href: string }) => {
@@ -113,7 +114,7 @@ export default function Nav() {
   return (
     <Box bg="black" px={4} boxShadow={'sm'} position="fixed" top={0} left={0} right={0} zIndex={1000} borderBottom="1px solid" borderColor="gray.800">
       <Container maxW="container.xl">
-        <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
+        <Flex h={20} alignItems={'center'} justifyContent={'space-between'}>
           <HStack spacing={8} alignItems={'center'}>
             <Link href="/" passHref>
               <Box 
@@ -122,7 +123,18 @@ export default function Nav() {
                 _hover={{ opacity: 0.8 }}
                 transition="opacity 0.2s"
               >
-                <Text fontSize="xl" fontWeight="medium" color="brand.500" fontFamily="var(--font-orbitron)">Fire Wave Sound</Text>
+                <HStack spacing={3}>
+                  <Image
+                    src="/logo.png"
+                    alt="Fire Wave Sound"
+                    width={50}
+                    height={50}
+                    style={{ objectFit: 'contain' }}
+                  />
+                  <Text fontSize="xl" fontWeight="medium" color="brand.500" fontFamily="var(--font-orbitron)">
+                    Fire Wave Sound
+                  </Text>
+                </HStack>
               </Box>
             </Link>
             
