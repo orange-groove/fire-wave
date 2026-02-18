@@ -31,7 +31,7 @@ const packages: Package[] = [
   {
     title: 'Basic Event Package',
     emoji: '🎤',
-    price: 'Starting at $600',
+    price: 'Starting at $400',
     idealFor: [
       'Solo artists',
       'Acoustic duos',
@@ -49,7 +49,7 @@ const packages: Package[] = [
   {
     title: 'Full Band Package',
     emoji: '🎸',
-    price: 'Starting at $1,200',
+    price: 'Starting at $750',
     idealFor: [
       'Rock / country / worship bands',
       'Multi-instrument acts',
@@ -69,7 +69,7 @@ const packages: Package[] = [
   {
     title: 'Festival / Multi-Act Package',
     emoji: '🎪',
-    price: 'Starting at $2,000',
+    price: 'Starting at $1,200',
     idealFor: [
       'Multi-band lineups',
       'City events',
