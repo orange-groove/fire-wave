@@ -8,11 +8,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Mixing & Mastering in Savannah, GA | Fire Wave Sound',
     description: 'Professional mixing and mastering services in Savannah, GA. Get radio-ready mixes that translate on every platform.',
-    url: 'https://www.firewave912.com/mixing-mastering-savannah',
+    url: 'https://www.firewavesound.com/mixing-mastering-savannah',
     siteName: 'Fire Wave Sound',
     images: [
       {
-        url: 'https://www.firewave912.com/og-board.jpg',
+        url: 'https://www.firewavesound.com/og-board.jpg',
         width: 1200,
         height: 630,
         alt: 'Fire Wave Sound - Mixing and Mastering Savannah',
@@ -25,10 +25,10 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Mixing & Mastering in Savannah, GA | Fire Wave Sound',
     description: 'Professional mixing and mastering services in Savannah, GA. Get radio-ready mixes that translate on every platform.',
-    images: ['https://www.firewave912.com/og-board.jpg'],
+    images: ['https://www.firewavesound.com/og-board.jpg'],
   },
   alternates: {
-    canonical: 'https://www.firewave912.com/mixing-mastering-savannah',
+    canonical: 'https://www.firewavesound.com/mixing-mastering-savannah',
   },
 }
 

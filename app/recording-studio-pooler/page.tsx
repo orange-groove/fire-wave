@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Script from 'next/script'
 import RecordingStudioPoolerContent from './recording-studio-pooler-content'
 
-const baseUrl = 'https://www.firewave912.com'
+const baseUrl = 'https://www.firewavesound.com'
 const canonical = `${baseUrl}/recording-studio-pooler`
 
 export const metadata: Metadata = {

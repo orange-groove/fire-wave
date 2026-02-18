@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'Contact | Fire Wave Sound',
   description: 'Get in touch to book studio time or request a live sound quote. Fire Wave Sound serves Richmond Hill and Savannah, GA.',
   alternates: {
-    canonical: 'https://www.firewave912.com/contact',
+    canonical: 'https://www.firewavesound.com/contact',
   },
 }
 

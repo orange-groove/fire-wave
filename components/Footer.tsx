@@ -136,8 +136,8 @@ export default function Footer() {
             </HStack>
             <HStack color="gray.400" fontSize="sm">
               <Icon as={FaEnvelope} color="brand.500" />
-              <ChakraLink href="mailto:info@firewave912.com" _hover={{ color: 'brand.500' }}>
-                info@firewave912.com
+              <ChakraLink href="mailto:info@firewavesound.com" _hover={{ color: 'brand.500' }}>
+                info@firewavesound.com
               </ChakraLink>
             </HStack>
           </VStack>

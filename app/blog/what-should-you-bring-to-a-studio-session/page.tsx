@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Script from 'next/script'
 import StudioSessionChecklistContent from './StudioSessionChecklistContent'
 
-const baseUrl = 'https://www.firewave912.com'
+const baseUrl = 'https://www.firewavesound.com'
 const canonical = `${baseUrl}/blog/what-should-you-bring-to-a-studio-session`
 
 export const metadata: Metadata = {

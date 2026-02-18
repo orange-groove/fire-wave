@@ -7,13 +7,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Blog | Fire Wave Sound',
     description: 'Session notes, recording insights, and behind-the-scenes from Fire Wave Sound.',
-    url: 'https://www.firewave912.com/blog',
+    url: 'https://www.firewavesound.com/blog',
     siteName: 'Fire Wave Sound',
     locale: 'en_US',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://www.firewave912.com/blog',
+    canonical: 'https://www.firewavesound.com/blog',
   },
 }
 

@@ -9,11 +9,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Recording Delta Circle at Fire Wave Sound',
     description: 'A behind-the-scenes look at recording Delta Circle at Fire Wave Sound near Savannah, GA.',
-    url: 'https://www.firewave912.com/blog/recording-delta-circle-fire-wave-studio',
+    url: 'https://www.firewavesound.com/blog/recording-delta-circle-fire-wave-studio',
     siteName: 'Fire Wave Sound',
     images: [
       {
-        url: 'https://www.firewave912.com/artists/delta-circle/1.jpeg',
+        url: 'https://www.firewavesound.com/artists/delta-circle/1.jpeg',
         width: 1200,
         height: 630,
         alt: 'Delta Circle - Recording Session at Fire Wave Sound',
@@ -28,10 +28,10 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Recording Delta Circle at Fire Wave Sound',
     description: 'A behind-the-scenes look at recording Delta Circle at Fire Wave Sound near Savannah, GA.',
-    images: ['https://www.firewave912.com/artists/delta-circle/1.jpeg'],
+    images: ['https://www.firewavesound.com/artists/delta-circle/1.jpeg'],
   },
   alternates: {
-    canonical: 'https://www.firewave912.com/blog/recording-delta-circle-fire-wave-studio',
+    canonical: 'https://www.firewavesound.com/blog/recording-delta-circle-fire-wave-studio',
   },
 }
 
@@ -41,25 +41,25 @@ const articleSchema = {
   '@type': 'BlogPosting',
   headline: 'Recording Delta Circle at Fire Wave Sound',
   description: 'A behind-the-scenes look at recording Delta Circle at Fire Wave Sound near Savannah, GA—how we built the record from a live scratch take.',
-  image: 'https://www.firewave912.com/artists/delta-circle/1.jpeg',
+  image: 'https://www.firewavesound.com/artists/delta-circle/1.jpeg',
   datePublished: '2025-02-04T00:00:00.000Z',
   dateModified: '2025-02-04T00:00:00.000Z',
   author: {
     '@type': 'Organization',
     name: 'Fire Wave Sound',
-    url: 'https://www.firewave912.com',
+    url: 'https://www.firewavesound.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'Fire Wave Sound',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://www.firewave912.com/logo.png',
+      url: 'https://www.firewavesound.com/logo.png',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://www.firewave912.com/blog/recording-delta-circle-fire-wave-studio',
+    '@id': 'https://www.firewavesound.com/blog/recording-delta-circle-fire-wave-studio',
   },
 }
 

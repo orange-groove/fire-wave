@@ -9,11 +9,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'What to Expect During Your First Recording Session',
     description: 'Never recorded in a studio before? Here\'s what typically happens during a session—setup, tracking, and how to prepare.',
-    url: 'https://www.firewave912.com/blog/what-to-expect-first-recording-session',
+    url: 'https://www.firewavesound.com/blog/what-to-expect-first-recording-session',
     siteName: 'Fire Wave Sound',
     images: [
       {
-        url: 'https://www.firewave912.com/control_room.jpg',
+        url: 'https://www.firewavesound.com/control_room.jpg',
         width: 1200,
         height: 630,
         alt: 'Control room at Fire Wave Sound',
@@ -28,10 +28,10 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'What to Expect During Your First Recording Session',
     description: 'Never recorded in a studio before? Here\'s what typically happens during a session.',
-    images: ['https://www.firewave912.com/control_room.jpg'],
+    images: ['https://www.firewavesound.com/control_room.jpg'],
   },
   alternates: {
-    canonical: 'https://www.firewave912.com/blog/what-to-expect-first-recording-session',
+    canonical: 'https://www.firewavesound.com/blog/what-to-expect-first-recording-session',
   },
 }
 
@@ -40,25 +40,25 @@ const articleSchema = {
   '@type': 'BlogPosting',
   headline: 'What to Expect During Your First Recording Session',
   description: 'Never recorded in a studio before? Here\'s what typically happens during a session—setup, tracking, breaks, and how to get the most out of your time.',
-  image: 'https://www.firewave912.com/control_room.jpg',
+  image: 'https://www.firewavesound.com/control_room.jpg',
   datePublished: '2025-02-04T00:00:00.000Z',
   dateModified: '2025-02-04T00:00:00.000Z',
   author: {
     '@type': 'Organization',
     name: 'Fire Wave Sound',
-    url: 'https://www.firewave912.com',
+    url: 'https://www.firewavesound.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'Fire Wave Sound',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://www.firewave912.com/logo.png',
+      url: 'https://www.firewavesound.com/logo.png',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://www.firewave912.com/blog/what-to-expect-first-recording-session',
+    '@id': 'https://www.firewavesound.com/blog/what-to-expect-first-recording-session',
   },
 }
 

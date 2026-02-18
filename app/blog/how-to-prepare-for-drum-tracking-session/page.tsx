@@ -9,11 +9,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'How to Prepare for a Drum Tracking Session',
     description: 'Get the most out of your drum tracking session—tips on kit selection, tuning, click tracks, and showing up prepared.',
-    url: 'https://www.firewave912.com/blog/how-to-prepare-for-drum-tracking-session',
+    url: 'https://www.firewavesound.com/blog/how-to-prepare-for-drum-tracking-session',
     siteName: 'Fire Wave Sound',
     images: [
       {
-        url: 'https://www.firewave912.com/drums.jpg',
+        url: 'https://www.firewavesound.com/drums.jpg',
         width: 1200,
         height: 630,
         alt: 'Drum kit ready for recording at Fire Wave Sound',
@@ -28,10 +28,10 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'How to Prepare for a Drum Tracking Session',
     description: 'Get the most out of your drum tracking session—tips on kit selection, tuning, click tracks, and showing up prepared.',
-    images: ['https://www.firewave912.com/drums.jpg'],
+    images: ['https://www.firewavesound.com/drums.jpg'],
   },
   alternates: {
-    canonical: 'https://www.firewave912.com/blog/how-to-prepare-for-drum-tracking-session',
+    canonical: 'https://www.firewavesound.com/blog/how-to-prepare-for-drum-tracking-session',
   },
 }
 
@@ -40,25 +40,25 @@ const articleSchema = {
   '@type': 'BlogPosting',
   headline: 'How to Prepare for a Drum Tracking Session',
   description: 'Get the most out of your drum tracking session—tips on kit selection, tuning, click tracks, and showing up prepared for studio recording.',
-  image: 'https://www.firewave912.com/drums.jpg',
+  image: 'https://www.firewavesound.com/drums.jpg',
   datePublished: '2025-02-04T00:00:00.000Z',
   dateModified: '2025-02-04T00:00:00.000Z',
   author: {
     '@type': 'Organization',
     name: 'Fire Wave Sound',
-    url: 'https://www.firewave912.com',
+    url: 'https://www.firewavesound.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'Fire Wave Sound',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://www.firewave912.com/logo.png',
+      url: 'https://www.firewavesound.com/logo.png',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://www.firewave912.com/blog/how-to-prepare-for-drum-tracking-session',
+    '@id': 'https://www.firewavesound.com/blog/how-to-prepare-for-drum-tracking-session',
   },
 }
 

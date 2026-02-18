@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Script from 'next/script'
 import LiveVsProgrammedDrumsContent from './LiveVsProgrammedDrumsContent'
 
-const baseUrl = 'https://www.firewave912.com'
+const baseUrl = 'https://www.firewavesound.com'
 const canonical = `${baseUrl}/blog/recording-live-drums-vs-programmed-drums`
 
 export const metadata: Metadata = {

@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Script from 'next/script'
 import RecordingTimelineContent from './RecordingTimelineContent'
 
-const baseUrl = 'https://www.firewave912.com'
+const baseUrl = 'https://www.firewavesound.com'
 const canonical = `${baseUrl}/blog/how-long-does-it-take-to-record-a-song`
 
 export const metadata: Metadata = {

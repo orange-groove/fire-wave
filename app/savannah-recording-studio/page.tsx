@@ -8,11 +8,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Savannah Recording Studio | Fire Wave Sound',
     description: 'Professional recording studio in Savannah, GA. Band-ready live room with drum tracking, vocal booths, and full production services.',
-    url: 'https://www.firewave912.com/savannah-recording-studio',
+    url: 'https://www.firewavesound.com/savannah-recording-studio',
     siteName: 'Fire Wave Sound',
     images: [
       {
-        url: 'https://www.firewave912.com/og-board.jpg',
+        url: 'https://www.firewavesound.com/og-board.jpg',
         width: 1200,
         height: 630,
         alt: 'Fire Wave Sound - Savannah Recording Studio',
@@ -25,10 +25,10 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Savannah Recording Studio | Fire Wave Sound',
     description: 'Professional recording studio in Savannah, GA. Band-ready live room with drum tracking, vocal booths, and full production services.',
-    images: ['https://www.firewave912.com/og-board.jpg'],
+    images: ['https://www.firewavesound.com/og-board.jpg'],
   },
   alternates: {
-    canonical: 'https://www.firewave912.com/savannah-recording-studio',
+    canonical: 'https://www.firewavesound.com/savannah-recording-studio',
   },
 }
 
