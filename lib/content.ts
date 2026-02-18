@@ -20,6 +20,8 @@ export interface Service {
   title: string
   description: string
   icon: string
+  ctaLabel?: string
+  ctaHref?: string
 }
 
 export interface GearCategory {

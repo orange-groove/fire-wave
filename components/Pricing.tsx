@@ -19,6 +19,7 @@ import Reveal from './Reveal'
 interface PricingSection {
   title: string
   emoji: string
+  anchorId?: string
   items: {
     title: string
     price?: string
@@ -96,6 +97,22 @@ const pricingData: PricingSection[] = [
       },
     ],
   },
+  {
+    title: 'Rehearsal Space',
+    emoji: '👥',
+    anchorId: 'rehearsal-space',
+    items: [
+      {
+        title: 'Rates',
+        bullets: [
+          '$50 per hour (2-hour minimum)',
+          'Block rates available',
+          'Discounted rates for bands recording with us',
+        ],
+        description: 'Reach out to check availability or to discuss long-term rehearsal arrangements.',
+      },
+    ],
+  },
 ]
 
 export default function Pricing() {
@@ -117,6 +134,7 @@ export default function Pricing() {
               {pricingData.map((section, sectionIdx) => (
                 <Box
                   key={sectionIdx}
+                  id={section.anchorId}
                   p={8}
                   bg="#141414"
                   rounded="lg"

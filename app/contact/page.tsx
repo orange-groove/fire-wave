@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { Box } from '@chakra-ui/react'
 import Contact from '../../components/Contact'
 import Footer from '../../components/Footer'
 
@@ -13,10 +12,10 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <Box bg="#0a0a0a" pt={16}>
+    <div style={{ background: '#0a0a0a', paddingTop: 64 }}>
       <Contact />
       <Footer />
-    </Box>
+    </div>
   )
 }
 

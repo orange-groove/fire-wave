@@ -8,8 +8,10 @@ import {
   VStack,
   SimpleGrid,
   Icon,
+  Link as ChakraLink,
 } from '@chakra-ui/react'
-import { FaMicrophone, FaMusic, FaHeadphones, FaVolumeUp } from 'react-icons/fa'
+import { FaMicrophone, FaMusic, FaHeadphones, FaVolumeUp, FaUsers } from 'react-icons/fa'
+import Link from 'next/link'
 import { getContent } from '../lib/content'
 import Reveal from './Reveal'
 
@@ -18,6 +20,7 @@ const iconMap = {
   FaMusic,
   FaHeadphones,
   FaVolumeUp,
+  FaUsers,
 }
 
 export default function Services() {
@@ -31,7 +34,7 @@ export default function Services() {
             <Heading as="h2" size="xl" textAlign="center" color="white">
               Our Services
             </Heading>
-            <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing={8} w="full">
+            <SimpleGrid columns={{ base: 1, md: 3, lg: 5 }} spacing={8} w="full">
               {content.services.map((service) => {
                 const IconComponent = iconMap[service.icon as keyof typeof iconMap]
                 return (
@@ -57,6 +60,17 @@ export default function Services() {
                     <Text textAlign="center" color="gray.400">
                       {service.description}
                     </Text>
+                    {service.ctaHref && service.ctaLabel && (
+                      <ChakraLink
+                        as={Link}
+                        href={service.ctaHref}
+                        color="brand.400"
+                        _hover={{ color: 'brand.300' }}
+                        fontWeight="500"
+                      >
+                        {service.ctaLabel}
+                      </ChakraLink>
+                    )}
                   </VStack>
                 )
               })}

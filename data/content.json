@@ -79,6 +79,14 @@
       "title": "Live Sound",
       "description": "Professional live audio for bands and events. Full PA systems, monitors, and on-site engineering throughout Coastal Georgia.",
       "icon": "FaVolumeUp"
+    },
+    {
+      "id": 5,
+      "title": "Rehearsal Space",
+      "description": "Private rehearsal space for bands looking for a focused, professional environment.",
+      "icon": "FaUsers",
+      "ctaLabel": "View rates & availability",
+      "ctaHref": "/#rehearsal-space"
     }
   ],
   "gear": [
