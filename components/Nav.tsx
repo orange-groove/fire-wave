@@ -86,6 +86,7 @@ const serviceLinks = [
   { href: '/mixing-mastering-savannah', label: 'Mixing & Mastering' },
   { href: '/drum-tracking-savannah', label: 'Drum Tracking' },
   { href: '/live-sound-savannah', label: 'Live Sound' },
+  { href: '/rehearsal-space-savannah', label: 'Rehearsal Space' },
 ]
 
 export default function Nav() {

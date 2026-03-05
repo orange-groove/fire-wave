@@ -90,7 +90,7 @@ export default function RecordingCostContent() {
                 Rates vary based on the size of the studio, available gear, and the engineer&apos;s experience.
               </Text>
               <Text>
-                At Fire Wave Sound, our standard rate is <strong>$60 per hour</strong>, with package options available for singles, EPs, and full projects.
+                At Fire Wave Sound, our standard rate is <strong>$40 per hour</strong> (2-hour minimum), with package options available for singles, EPs, and full projects.
               </Text>
 
               {/* What Affects Cost */}
@@ -155,7 +155,7 @@ export default function RecordingCostContent() {
                     </Tr>
                     <Tr>
                       <Td color="gray.300" borderColor="gray.800">EP (4–6 songs)</Td>
-                      <Td color="gray.300" borderColor="gray.800">$1,200–$2,500</Td>
+                      <Td color="gray.300" borderColor="gray.800">$1,000–$2,500</Td>
                     </Tr>
                     <Tr>
                       <Td color="gray.300" borderColor="gray.800">Full-length album</Td>

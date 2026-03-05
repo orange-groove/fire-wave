@@ -196,9 +196,9 @@ export default function LiveSoundSavannahContent() {
 
               <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8} w="full">
                 {[
-                  { title: 'Basic Event', price: 'Starting at $400', desc: 'Solo artists, acoustic duos, small private events, speaking engagements' },
-                  { title: 'Full Band', price: 'Starting at $750', desc: 'Rock/country/worship bands, multi-instrument acts, medium events' },
-                  { title: 'Festival', price: 'Starting at $1,200', desc: 'Multi-band lineups, city events, large festivals, corporate events' },
+                  { title: 'Basic Event', price: 'Starting at $300', desc: 'Solo artists, acoustic duos, small private events, speaking engagements' },
+                  { title: 'Full Band', price: 'Starting at $550', desc: 'Rock/country/worship bands, multi-instrument acts, medium events' },
+                  { title: 'Festival', price: 'Starting at $900', desc: 'Multi-band lineups, city events, large festivals, corporate events' },
                 ].map((pkg, idx) => (
                   <VStack
                     key={idx}
@@ -218,7 +218,7 @@ export default function LiveSoundSavannahContent() {
                 ))}
               </SimpleGrid>
 
-              <Link href="/#live-sound" passHref legacyBehavior>
+              <Link href="/#live-sound" passHref>
                 <ChakraLink color="brand.400" fontWeight="500" _hover={{ color: 'brand.300' }}>
                   View full package details →
                 </ChakraLink>

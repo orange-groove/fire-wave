@@ -28,6 +28,7 @@ const serviceLinks = [
   { label: 'Mixing & Mastering', href: '/mixing-mastering-savannah' },
   { label: 'Drum Tracking', href: '/drum-tracking-savannah' },
   { label: 'Live Sound Savannah', href: '/live-sound-savannah' },
+  { label: 'Rehearsal Space', href: '/rehearsal-space-savannah' },
   { label: 'Recording Studio (Savannah)', href: '/recording-studio-savannah' },
   { label: 'Recording Studio (Richmond Hill)', href: '/recording-studio-richmond-hill' },
   { label: 'Recording Studio (Pooler)', href: '/recording-studio-pooler' },
