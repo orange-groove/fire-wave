@@ -7,3 +7,7 @@ services:
     envVars:
       - key: NODE_ENV
         value: production 
+      # Keep Node's heap below Render's 512MB limit.
+      # Prevents the OS from killing the process during memory spikes.
+      - key: NODE_OPTIONS
+        value: --max-old-space-size=384
