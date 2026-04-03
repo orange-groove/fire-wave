@@ -1,6 +1,12 @@
 import { Metadata } from 'next'
 import Script from 'next/script'
 import FirstSessionContent from './FirstSessionContent'
+import { toAbsoluteCdnSrc } from '../../../lib/cloudflareImages'
+
+const baseUrl = 'https://www.firewavesound.com'
+const canonical = `${baseUrl}/blog/what-to-expect-first-recording-session`
+const ogImage = toAbsoluteCdnSrc('/control_room.jpg', baseUrl)
+const publisherLogo = toAbsoluteCdnSrc('/logo.png', baseUrl)
 
 export const metadata: Metadata = {
   title: 'What to Expect During Your First Recording Session | Fire Wave Sound',
@@ -9,11 +15,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'What to Expect During Your First Recording Session',
     description: 'Never recorded in a studio before? Here\'s what typically happens during a session—setup, tracking, and how to prepare.',
-    url: 'https://www.firewavesound.com/blog/what-to-expect-first-recording-session',
+    url: canonical,
     siteName: 'Fire Wave Sound',
     images: [
       {
-        url: 'https://www.firewavesound.com/control_room.jpg',
+        url: ogImage,
         width: 1200,
         height: 630,
         alt: 'Control room at Fire Wave Sound',
@@ -28,10 +34,10 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'What to Expect During Your First Recording Session',
     description: 'Never recorded in a studio before? Here\'s what typically happens during a session.',
-    images: ['https://www.firewavesound.com/control_room.jpg'],
+    images: [ogImage],
   },
   alternates: {
-    canonical: 'https://www.firewavesound.com/blog/what-to-expect-first-recording-session',
+    canonical,
   },
 }
 
@@ -40,25 +46,25 @@ const articleSchema = {
   '@type': 'BlogPosting',
   headline: 'What to Expect During Your First Recording Session',
   description: 'Never recorded in a studio before? Here\'s what typically happens during a session—setup, tracking, breaks, and how to get the most out of your time.',
-  image: 'https://www.firewavesound.com/control_room.jpg',
+  image: ogImage,
   datePublished: '2025-02-04T00:00:00.000Z',
   dateModified: '2025-02-04T00:00:00.000Z',
   author: {
     '@type': 'Organization',
     name: 'Fire Wave Sound',
-    url: 'https://www.firewavesound.com',
+    url: baseUrl,
   },
   publisher: {
     '@type': 'Organization',
     name: 'Fire Wave Sound',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://www.firewavesound.com/logo.png',
+      url: publisherLogo,
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://www.firewavesound.com/blog/what-to-expect-first-recording-session',
+    '@id': canonical,
   },
 }
 

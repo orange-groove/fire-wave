@@ -1,8 +1,10 @@
 import { Metadata } from 'next'
 import RehearsalSpaceSavannahContent from './RehearsalSpaceSavannahContent'
+import { toAbsoluteCdnSrc } from '../../lib/cloudflareImages'
 
 const baseUrl = 'https://www.firewavesound.com'
 const canonical = `${baseUrl}/rehearsal-space-savannah`
+const ogImage = toAbsoluteCdnSrc('/og-board.jpg', baseUrl)
 
 export const metadata: Metadata = {
   title: 'Rehearsal Space in Savannah, GA | Fire Wave Sound',
@@ -26,7 +28,7 @@ export const metadata: Metadata = {
     siteName: 'Fire Wave Sound',
     images: [
       {
-        url: `${baseUrl}/og-board.jpg`,
+        url: ogImage,
         width: 1200,
         height: 630,
         alt: 'Fire Wave Sound rehearsal space',
@@ -40,7 +42,7 @@ export const metadata: Metadata = {
     title: 'Rehearsal Space in Savannah, GA | Fire Wave Sound',
     description:
       'Private rehearsal space for bands and artists near Savannah, GA. $50/hr with a 2-hour minimum.',
-    images: [`${baseUrl}/og-board.jpg`],
+    images: [ogImage],
   },
 }
 

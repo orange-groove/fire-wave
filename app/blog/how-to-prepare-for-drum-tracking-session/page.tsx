@@ -1,6 +1,12 @@
 import { Metadata } from 'next'
 import Script from 'next/script'
 import DrumPrepContent from './DrumPrepContent'
+import { toAbsoluteCdnSrc } from '../../../lib/cloudflareImages'
+
+const baseUrl = 'https://www.firewavesound.com'
+const canonical = `${baseUrl}/blog/how-to-prepare-for-drum-tracking-session`
+const ogImage = toAbsoluteCdnSrc('/drums.jpg', baseUrl)
+const publisherLogo = toAbsoluteCdnSrc('/logo.png', baseUrl)
 
 export const metadata: Metadata = {
   title: 'How to Prepare for a Drum Tracking Session | Fire Wave Sound',
@@ -9,11 +15,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'How to Prepare for a Drum Tracking Session',
     description: 'Get the most out of your drum tracking session—tips on kit selection, tuning, click tracks, and showing up prepared.',
-    url: 'https://www.firewavesound.com/blog/how-to-prepare-for-drum-tracking-session',
+    url: canonical,
     siteName: 'Fire Wave Sound',
     images: [
       {
-        url: 'https://www.firewavesound.com/drums.jpg',
+        url: ogImage,
         width: 1200,
         height: 630,
         alt: 'Drum kit ready for recording at Fire Wave Sound',
@@ -28,10 +34,10 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'How to Prepare for a Drum Tracking Session',
     description: 'Get the most out of your drum tracking session—tips on kit selection, tuning, click tracks, and showing up prepared.',
-    images: ['https://www.firewavesound.com/drums.jpg'],
+    images: [ogImage],
   },
   alternates: {
-    canonical: 'https://www.firewavesound.com/blog/how-to-prepare-for-drum-tracking-session',
+    canonical,
   },
 }
 
@@ -40,25 +46,25 @@ const articleSchema = {
   '@type': 'BlogPosting',
   headline: 'How to Prepare for a Drum Tracking Session',
   description: 'Get the most out of your drum tracking session—tips on kit selection, tuning, click tracks, and showing up prepared for studio recording.',
-  image: 'https://www.firewavesound.com/drums.jpg',
+  image: ogImage,
   datePublished: '2025-02-04T00:00:00.000Z',
   dateModified: '2025-02-04T00:00:00.000Z',
   author: {
     '@type': 'Organization',
     name: 'Fire Wave Sound',
-    url: 'https://www.firewavesound.com',
+    url: baseUrl,
   },
   publisher: {
     '@type': 'Organization',
     name: 'Fire Wave Sound',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://www.firewavesound.com/logo.png',
+      url: publisherLogo,
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://www.firewavesound.com/blog/how-to-prepare-for-drum-tracking-session',
+    '@id': canonical,
   },
 }
 

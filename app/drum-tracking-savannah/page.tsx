@@ -1,5 +1,10 @@
 import { Metadata } from 'next'
 import DrumTrackingContent from './DrumTrackingContent'
+import { toAbsoluteCdnSrc } from '../../lib/cloudflareImages'
+
+const baseUrl = 'https://www.firewavesound.com'
+const canonical = `${baseUrl}/drum-tracking-savannah`
+const ogImage = toAbsoluteCdnSrc('/og-board.jpg', baseUrl)
 
 export const metadata: Metadata = {
   title: 'Drum Tracking Studio in Savannah, GA | Fire Wave Sound',
@@ -8,11 +13,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Drum Tracking Studio in Savannah, GA | Fire Wave Sound',
     description: 'Professional drum tracking and live drum recording in Savannah, GA. Band-ready live room, premium mics, and experienced engineering.',
-    url: 'https://www.firewavesound.com/drum-tracking-savannah',
+    url: canonical,
     siteName: 'Fire Wave Sound',
     images: [
       {
-        url: 'https://www.firewavesound.com/og-board.jpg',
+        url: ogImage,
         width: 1200,
         height: 630,
         alt: 'Fire Wave Sound - Drum Tracking Savannah',
@@ -25,10 +30,10 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Drum Tracking Studio in Savannah, GA | Fire Wave Sound',
     description: 'Professional drum tracking and live drum recording in Savannah, GA. Band-ready live room, premium mics, and experienced engineering.',
-    images: ['https://www.firewavesound.com/og-board.jpg'],
+    images: [ogImage],
   },
   alternates: {
-    canonical: 'https://www.firewavesound.com/drum-tracking-savannah',
+    canonical,
   },
 }
 

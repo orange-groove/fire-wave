@@ -16,6 +16,7 @@ import Link from 'next/link'
 import BlogHeader from '../../../components/BlogHeader'
 import Reveal from '../../../components/Reveal'
 import Footer from '../../../components/Footer'
+import { toCdnSrc } from '../../../lib/cloudflareImages'
 
 export default function FirstSessionContent() {
   return (
@@ -38,7 +39,7 @@ export default function FirstSessionContent() {
               bg="#141414"
             >
               <img
-                src="/control_room.jpg"
+                src={toCdnSrc('/control_room.jpg')}
                 alt="Control room at Fire Wave Sound"
                 style={{
                   width: '100%',

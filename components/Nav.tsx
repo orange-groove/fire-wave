@@ -21,6 +21,7 @@ import { HamburgerIcon, CloseIcon, ChevronDownIcon } from '@chakra-ui/icons'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
+import { toCdnSrc } from '../lib/cloudflareImages'
 
 const NavLink = ({ children, href }: { children: React.ReactNode; href: string }) => {
   const pathname = usePathname()
@@ -126,7 +127,7 @@ export default function Nav() {
               >
                 <HStack spacing={3}>
                   <Image
-                    src="/logo.png"
+                    src={toCdnSrc('/logo.png')}
                     alt="Fire Wave Sound"
                     width={50}
                     height={50}

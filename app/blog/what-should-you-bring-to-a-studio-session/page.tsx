@@ -1,9 +1,12 @@
 import { Metadata } from 'next'
 import Script from 'next/script'
 import StudioSessionChecklistContent from './StudioSessionChecklistContent'
+import { toAbsoluteCdnSrc } from '../../../lib/cloudflareImages'
 
 const baseUrl = 'https://www.firewavesound.com'
 const canonical = `${baseUrl}/blog/what-should-you-bring-to-a-studio-session`
+const ogImage = toAbsoluteCdnSrc('/guitars.jpg', baseUrl)
+const publisherLogo = toAbsoluteCdnSrc('/logo.png', baseUrl)
 
 export const metadata: Metadata = {
   title: 'What Should You Bring to a Studio Session? | Fire Wave Sound',
@@ -24,7 +27,7 @@ export const metadata: Metadata = {
     siteName: 'Fire Wave Sound',
     images: [
       {
-        url: `${baseUrl}/guitars.jpg`,
+        url: ogImage,
         width: 1200,
         height: 630,
         alt: 'Guitars ready for a recording session at Fire Wave Sound',
@@ -40,7 +43,7 @@ export const metadata: Metadata = {
     title: 'What Should You Bring to a Studio Session?',
     description:
       'A practical checklist for studio sessions—what to bring, what not to bring, and how to keep your recording day moving.',
-    images: [`${baseUrl}/guitars.jpg`],
+    images: [ogImage],
   },
   alternates: {
     canonical,
@@ -53,7 +56,7 @@ const articleSchema = {
   headline: 'What Should You Bring to a Studio Session?',
   description:
     'A practical checklist for studio sessions: what guitarists, drummers, vocalists, and keys/bass players should bring—plus what you don’t need and how to avoid wasted time.',
-  image: `${baseUrl}/guitars.jpg`,
+  image: ogImage,
   datePublished: '2026-02-04T00:00:00.000Z',
   dateModified: '2026-02-04T00:00:00.000Z',
   author: {
@@ -66,7 +69,7 @@ const articleSchema = {
     name: 'Fire Wave Sound',
     logo: {
       '@type': 'ImageObject',
-      url: `${baseUrl}/logo.png`,
+      url: publisherLogo,
     },
   },
   mainEntityOfPage: {

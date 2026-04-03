@@ -13,6 +13,7 @@ import {
   Divider,
 } from '@chakra-ui/react'
 import dynamic from 'next/dynamic'
+import { toCdnSrc } from '../../../lib/cloudflareImages'
 
 // Lazy-load ImageCarousel to reduce initial JS bundle
 const ImageCarousel = dynamic(() => import('../../../components/ImageCarousel'), {
@@ -23,16 +24,16 @@ const ImageCarousel = dynamic(() => import('../../../components/ImageCarousel'),
 })
 
 const sessionImages = [
-  { src: '/artists/delta-circle/1.jpeg', alt: 'Delta Circle recording session' },
-  { src: '/artists/delta-circle/2.jpeg', alt: 'Delta Circle in the studio' },
-  { src: '/artists/delta-circle/3.jpeg', alt: 'Delta Circle tracking' },
-  { src: '/artists/delta-circle/4.jpeg', alt: 'Delta Circle session photo' },
-  { src: '/artists/delta-circle/5.jpeg', alt: 'Delta Circle at Fire Wave Sound' },
-  { src: '/artists/delta-circle/6.jpeg', alt: 'Delta Circle recording' },
-  { src: '/artists/delta-circle/7.jpeg', alt: 'Delta Circle session' },
-  { src: '/artists/delta-circle/8.jpeg', alt: 'Delta Circle in studio' },
-  { src: '/artists/delta-circle/9.jpeg', alt: 'Delta Circle tracking session' },
-  { src: '/artists/delta-circle/10.jpeg', alt: 'Delta Circle at the studio' },
+  { src: '/artists/delta-circle/delta-circle-1.jpeg', alt: 'Delta Circle recording session' },
+  { src: '/artists/delta-circle/delta-circle-2.jpeg', alt: 'Delta Circle in the studio' },
+  { src: '/artists/delta-circle/delta-circle-3.jpeg', alt: 'Delta Circle tracking' },
+  { src: '/artists/delta-circle/delta-circle-4.jpeg', alt: 'Delta Circle session photo' },
+  { src: '/artists/delta-circle/delta-circle-5.jpeg', alt: 'Delta Circle at Fire Wave Sound' },
+  { src: '/artists/delta-circle/delta-circle-6.jpeg', alt: 'Delta Circle recording' },
+  { src: '/artists/delta-circle/delta-circle-7.jpeg', alt: 'Delta Circle session' },
+  { src: '/artists/delta-circle/delta-circle-8.jpeg', alt: 'Delta Circle in studio' },
+  { src: '/artists/delta-circle/delta-circle-9.jpeg', alt: 'Delta Circle tracking session' },
+  { src: '/artists/delta-circle/delta-circle-10.jpeg', alt: 'Delta Circle at the studio' },
 ]
 import Link from 'next/link'
 import BlogHeader from '../../../components/BlogHeader'
@@ -60,7 +61,7 @@ export default function DeltaCirclePostContent() {
               bg="#141414"
             >
               <img
-                src="/artists/delta-circle/1.jpeg"
+                src={toCdnSrc('/artists/delta-circle/delta-circle-1.jpeg')}
                 alt="Delta Circle recording session at Fire Wave Sound"
                 style={{
                   width: '100%',
@@ -206,7 +207,7 @@ export default function DeltaCirclePostContent() {
                   borderColor="gray.700"
                 >
                   <img
-                    src="/artists/delta-circle/delta-circle-logo.jpg"
+                    src={toCdnSrc('/artists/delta-circle/delta-circle-logo.jpg')}
                     alt="Delta Circle logo"
                     style={{
                       width: '100%',

@@ -15,6 +15,7 @@ import Slider from 'react-slick'
 
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
+import { toCdnSrc } from '../lib/cloudflareImages'
 
 export interface CarouselImage {
   src: string
@@ -70,7 +71,7 @@ export default function ImageCarousel({
   useEffect(() => {
     images.forEach((image) => {
       const img = new window.Image()
-      img.src = image.src
+      img.src = toCdnSrc(image.src)
     })
   }, [images])
 
@@ -117,7 +118,7 @@ export default function ImageCarousel({
                 role="group"
               >
                 <img
-                  src={image.src}
+                  src={toCdnSrc(image.src)}
                   alt={image.alt}
                   style={{
                     width: '100%',
@@ -181,7 +182,7 @@ export default function ImageCarousel({
                   pointerEvents={index === selectedIndex ? 'auto' : 'none'}
                 >
                   <img
-                    src={image.src}
+                    src={toCdnSrc(image.src)}
                     alt={image.alt}
                     style={{
                       width: '100%',

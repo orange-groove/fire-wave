@@ -17,6 +17,7 @@ import Link from 'next/link'
 import BlogHeader from '../../../components/BlogHeader'
 import Reveal from '../../../components/Reveal'
 import Footer from '../../../components/Footer'
+import { toCdnSrc } from '../../../lib/cloudflareImages'
 
 export default function RecordingTimelineContent() {
   return (
@@ -39,7 +40,7 @@ export default function RecordingTimelineContent() {
               bg="#141414"
             >
               <img
-                src="/board.jpg"
+                src={toCdnSrc('/board.jpg')}
                 alt="Recording studio mixing board at Fire Wave Sound"
                 style={{
                   width: '100%',

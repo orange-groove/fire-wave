@@ -1,9 +1,12 @@
 import { Metadata } from 'next'
 import Script from 'next/script'
 import RecordingTimelineContent from './RecordingTimelineContent'
+import { toAbsoluteCdnSrc } from '../../../lib/cloudflareImages'
 
 const baseUrl = 'https://www.firewavesound.com'
 const canonical = `${baseUrl}/blog/how-long-does-it-take-to-record-a-song`
+const ogImage = toAbsoluteCdnSrc('/board.jpg', baseUrl)
+const publisherLogo = toAbsoluteCdnSrc('/logo.png', baseUrl)
 
 export const metadata: Metadata = {
   title: 'How Long Does It Take to Record a Song? | Fire Wave Sound',
@@ -24,7 +27,7 @@ export const metadata: Metadata = {
     siteName: 'Fire Wave Sound',
     images: [
       {
-        url: `${baseUrl}/board.jpg`,
+        url: ogImage,
         width: 1200,
         height: 630,
         alt: 'Recording studio mixing board at Fire Wave Sound',
@@ -40,7 +43,7 @@ export const metadata: Metadata = {
     title: 'How Long Does It Take to Record a Song?',
     description:
       'A realistic breakdown of tracking, vocals, editing, mixing, and mastering—plus what speeds sessions up (and what slows them down).',
-    images: [`${baseUrl}/board.jpg`],
+    images: [ogImage],
   },
   alternates: {
     canonical,
@@ -53,7 +56,7 @@ const articleSchema = {
   headline: 'How Long Does It Take to Record a Song?',
   description:
     'A realistic breakdown of how long it takes to record a song—tracking, vocals, editing, mixing, and mastering—plus what speeds things up (and what slows sessions down).',
-  image: `${baseUrl}/board.jpg`,
+  image: ogImage,
   datePublished: '2026-02-04T00:00:00.000Z',
   dateModified: '2026-02-04T00:00:00.000Z',
   author: {
@@ -66,7 +69,7 @@ const articleSchema = {
     name: 'Fire Wave Sound',
     logo: {
       '@type': 'ImageObject',
-      url: `${baseUrl}/logo.png`,
+      url: publisherLogo,
     },
   },
   mainEntityOfPage: {

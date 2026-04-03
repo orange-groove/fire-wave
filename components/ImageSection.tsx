@@ -9,6 +9,7 @@ import {
   SimpleGrid,
 } from '@chakra-ui/react'
 import Reveal from './Reveal'
+import { toCdnSrc } from '../lib/cloudflareImages'
 
 interface ImageItem {
   src: string
@@ -54,7 +55,7 @@ export default function ImageSection({ title, subtitle, images }: ImageSectionPr
                   role="group"
                 >
                   <img
-                    src={image.src}
+                    src={toCdnSrc(image.src)}
                     alt={image.alt}
                     style={{
                       width: '100%',

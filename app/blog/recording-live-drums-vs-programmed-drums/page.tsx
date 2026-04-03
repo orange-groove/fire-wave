@@ -1,9 +1,12 @@
 import { Metadata } from 'next'
 import Script from 'next/script'
 import LiveVsProgrammedDrumsContent from './LiveVsProgrammedDrumsContent'
+import { toAbsoluteCdnSrc } from '../../../lib/cloudflareImages'
 
 const baseUrl = 'https://www.firewavesound.com'
 const canonical = `${baseUrl}/blog/recording-live-drums-vs-programmed-drums`
+const ogImage = toAbsoluteCdnSrc('/drums.jpg', baseUrl)
+const publisherLogo = toAbsoluteCdnSrc('/logo.png', baseUrl)
 
 export const metadata: Metadata = {
   title: 'Recording Live Drums vs Programmed Drums — What’s the Difference? | Fire Wave Sound',
@@ -24,7 +27,7 @@ export const metadata: Metadata = {
     siteName: 'Fire Wave Sound',
     images: [
       {
-        url: `${baseUrl}/drums.jpg`,
+        url: ogImage,
         width: 1200,
         height: 630,
         alt: 'Live drum setup at Fire Wave Sound',
@@ -40,7 +43,7 @@ export const metadata: Metadata = {
     title: 'Recording Live Drums vs Programmed Drums — What’s the Difference?',
     description:
       'A practical comparison of live drum recording vs programmed drums—plus when a hybrid approach is the best move.',
-    images: [`${baseUrl}/drums.jpg`],
+    images: [ogImage],
   },
   alternates: {
     canonical,
@@ -53,7 +56,7 @@ const articleSchema = {
   headline: 'Recording Live Drums vs Programmed Drums — What’s the Difference?',
   description:
     'A practical comparison of live drum recording vs programmed drums: feel, tone, workflow, budget, genre, and a hybrid approach—so you can pick what fits your song.',
-  image: `${baseUrl}/drums.jpg`,
+  image: ogImage,
   datePublished: '2026-02-04T00:00:00.000Z',
   dateModified: '2026-02-04T00:00:00.000Z',
   author: {
@@ -66,7 +69,7 @@ const articleSchema = {
     name: 'Fire Wave Sound',
     logo: {
       '@type': 'ImageObject',
-      url: `${baseUrl}/logo.png`,
+      url: publisherLogo,
     },
   },
   mainEntityOfPage: {

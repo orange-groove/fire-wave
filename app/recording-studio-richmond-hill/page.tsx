@@ -1,9 +1,11 @@
 import { Metadata } from 'next'
 import Script from 'next/script'
 import RecordingStudioRichmondHillContent from './recording-studio-richmond-hill-content'
+import { toAbsoluteCdnSrc } from '../../lib/cloudflareImages'
 
 const baseUrl = 'https://www.firewavesound.com'
 const canonical = `${baseUrl}/recording-studio-richmond-hill`
+const ogImage = toAbsoluteCdnSrc('/og-board.jpg', baseUrl)
 
 export const metadata: Metadata = {
   title: 'Recording Studio in Richmond Hill, GA | Fire Wave Sound',
@@ -20,7 +22,7 @@ export const metadata: Metadata = {
     siteName: 'Fire Wave Sound',
     images: [
       {
-        url: `${baseUrl}/og-board.jpg`,
+        url: ogImage,
         width: 1200,
         height: 630,
         alt: 'Fire Wave Sound control room and mixing console',
@@ -34,7 +36,7 @@ export const metadata: Metadata = {
     title: 'Recording Studio in Richmond Hill, GA | Fire Wave Sound',
     description:
       'Richmond Hill, GA recording studio for bands and artists: live drums, full band tracking, vocals, mixing & mastering.',
-    images: [`${baseUrl}/og-board.jpg`],
+    images: [ogImage],
   },
 }
 
@@ -44,7 +46,7 @@ const localBusinessJsonLd = {
   '@id': baseUrl,
   name: 'Fire Wave Sound',
   url: baseUrl,
-  image: `${baseUrl}/og-board.jpg`,
+  image: ogImage,
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Richmond Hill',

@@ -15,6 +15,7 @@ import Link from 'next/link'
 import { FaInstagram, FaFacebook, FaYoutube, FaMapMarkerAlt, FaEnvelope, FaPhone } from 'react-icons/fa'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
+import { toCdnSrc } from '../lib/cloudflareImages'
 
 const navLinks = [
   { label: 'About', href: '/#about' },
@@ -67,7 +68,7 @@ export default function Footer() {
           <VStack align={{ base: 'center', lg: 'flex-start' }} spacing={4} maxW="250px">
             <Link href="/">
               <Image
-                src="/logo.png"
+                src={toCdnSrc('/logo.png')}
                 alt="Fire Wave Sound"
                 width={180}
                 height={180}
@@ -178,7 +179,7 @@ export default function Footer() {
             Made with love by Orange Groove Solutions
             <Box as="span" display="inline-block" verticalAlign="middle" ms={2} pb={6}>
               <Image
-                src="/orange-groove-mark.png"
+                src={toCdnSrc('/orange-groove-mark.png')}
                 alt=""
                 width={50}
                 height={50}

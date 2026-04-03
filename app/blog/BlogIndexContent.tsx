@@ -12,6 +12,7 @@ import {
 import Link from 'next/link'
 import Footer from '../../components/Footer'
 import Reveal from '../../components/Reveal'
+import { toCdnSrc } from '../../lib/cloudflareImages'
 
 const posts = [
   {
@@ -61,7 +62,7 @@ const posts = [
     title: 'Recording Delta Circle at Fire Wave Sound',
     excerpt: 'How we built Delta Circle\'s record from a live scratch take—keeping the energy while layering guitars, bass, and vocals.',
     date: 'February 4, 2025',
-    image: '/artists/delta-circle/1.jpeg',
+    image: '/artists/delta-circle/delta-circle-1.jpeg',
   },
 ]
 
@@ -110,7 +111,7 @@ export default function BlogIndexContent() {
                           mb={4}
                         >
                           <img
-                            src={post.image}
+                            src={toCdnSrc(post.image)}
                             alt={post.title}
                             style={{
                               width: '100%',

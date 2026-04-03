@@ -10,6 +10,7 @@ import {
 } from '@chakra-ui/react'
 import Image from 'next/image'
 import Reveal from './Reveal'
+import { toCdnSrc } from '../lib/cloudflareImages'
 
 const proofItems = [
   {
@@ -61,7 +62,7 @@ export default function ProofSection() {
                   }}
                 >
                   <Image
-                    src={item.image}
+                    src={toCdnSrc(item.image)}
                     alt={item.title}
                     fill
                     sizes="(max-width: 768px) 100vw, 33vw"

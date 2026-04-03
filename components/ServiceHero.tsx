@@ -11,6 +11,7 @@ import {
 import { motion, useReducedMotion } from 'framer-motion'
 import { heroContainer, heroItem } from '../lib/motion'
 import Image from 'next/image'
+import { toCdnSrc } from '../lib/cloudflareImages'
 
 const MotionVStack = motion(VStack)
 const MotionHeading = motion(Heading)
@@ -71,7 +72,7 @@ export default function ServiceHero({
     >
       {/* Hero background image - using Next.js Image for LCP optimization */}
       <Image
-        src={bgImage}
+        src={toCdnSrc(bgImage)}
         alt=""
         fill
         priority

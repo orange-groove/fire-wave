@@ -11,6 +11,7 @@ import {
   Icon,
 } from '@chakra-ui/react'
 import { FaFacebook, FaInstagram } from 'react-icons/fa'
+import { toCdnSrc } from '../lib/cloudflareImages'
 
 export default function ArtistsSection() {
   return (
@@ -29,7 +30,7 @@ export default function ArtistsSection() {
               overflow="hidden"
             >
               <img
-                src="/artists/delta-circle/delta-circle-logo.jpg"
+                src={toCdnSrc('/artists/delta-circle/delta-circle-logo.jpg')}
                 alt="Delta Circle"
                 loading="lazy"
                 decoding="async"

@@ -1,5 +1,10 @@
 import { Metadata } from 'next'
 import LiveSoundSavannahContent from './LiveSoundSavannahContent'
+import { toAbsoluteCdnSrc } from '../../lib/cloudflareImages'
+
+const baseUrl = 'https://www.firewavesound.com'
+const canonical = `${baseUrl}/live-sound-savannah`
+const ogImage = toAbsoluteCdnSrc('/og-board.jpg', baseUrl)
 
 export const metadata: Metadata = {
   title: 'Live Sound Services in Savannah, GA | Fire Wave Sound',
@@ -8,11 +13,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Live Sound Services in Savannah, GA | Fire Wave Sound',
     description: 'Professional live sound engineering and event audio in Savannah, GA. Concerts, festivals, weddings, and corporate events.',
-    url: 'https://www.firewavesound.com/live-sound-savannah',
+    url: canonical,
     siteName: 'Fire Wave Sound',
     images: [
       {
-        url: 'https://www.firewavesound.com/og-board.jpg',
+        url: ogImage,
         width: 1200,
         height: 630,
         alt: 'Fire Wave Sound - Live Sound Services Savannah',
@@ -25,10 +30,10 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Live Sound Services in Savannah, GA | Fire Wave Sound',
     description: 'Professional live sound engineering and event audio in Savannah, GA. Concerts, festivals, weddings, and corporate events.',
-    images: ['https://www.firewavesound.com/og-board.jpg'],
+    images: [ogImage],
   },
   alternates: {
-    canonical: 'https://www.firewavesound.com/live-sound-savannah',
+    canonical,
   },
 }
 

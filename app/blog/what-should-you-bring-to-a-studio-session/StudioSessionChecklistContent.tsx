@@ -17,6 +17,7 @@ import Link from 'next/link'
 import BlogHeader from '../../../components/BlogHeader'
 import Reveal from '../../../components/Reveal'
 import Footer from '../../../components/Footer'
+import { toCdnSrc } from '../../../lib/cloudflareImages'
 
 export default function StudioSessionChecklistContent() {
   return (
@@ -39,7 +40,7 @@ export default function StudioSessionChecklistContent() {
               bg="#141414"
             >
               <img
-                src="/guitars.jpg"
+                src={toCdnSrc('/guitars.jpg')}
                 alt="Guitars ready for a recording session at Fire Wave Sound"
                 style={{
                   width: '100%',

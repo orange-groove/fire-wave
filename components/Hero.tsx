@@ -15,7 +15,7 @@ import {
 } from '@chakra-ui/react'
 import { FaStar, FaDrum, FaMapMarkerAlt } from 'react-icons/fa'
 import Image from 'next/image'
-import heroImage from '../public/hero-bg.jpg'
+import { toCdnSrc } from '../lib/cloudflareImages'
 
 // CSS keyframes for fade-in animation (replaces framer-motion for LCP optimization)
 const fadeInUp = keyframes`
@@ -59,14 +59,13 @@ export default function Hero() {
     >
       {/* Hero background image - using Next.js Image for LCP optimization */}
       <Image
-        src={heroImage}
+        src={toCdnSrc('/hero-bg.jpg')}
         alt=""
         fill
         priority
         fetchPriority="high"
         sizes="100vw"
         quality={85}
-        placeholder="blur"
         style={{
           objectFit: 'cover',
           objectPosition: 'center',

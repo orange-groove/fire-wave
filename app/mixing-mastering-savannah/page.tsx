@@ -1,5 +1,10 @@
 import { Metadata } from 'next'
 import MixingMasteringContent from './MixingMasteringContent'
+import { toAbsoluteCdnSrc } from '../../lib/cloudflareImages'
+
+const baseUrl = 'https://www.firewavesound.com'
+const canonical = `${baseUrl}/mixing-mastering-savannah`
+const ogImage = toAbsoluteCdnSrc('/og-board.jpg', baseUrl)
 
 export const metadata: Metadata = {
   title: 'Mixing & Mastering in Savannah, GA | Fire Wave Sound',
@@ -8,11 +13,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Mixing & Mastering in Savannah, GA | Fire Wave Sound',
     description: 'Professional mixing and mastering services in Savannah, GA. Get radio-ready mixes that translate on every platform.',
-    url: 'https://www.firewavesound.com/mixing-mastering-savannah',
+    url: canonical,
     siteName: 'Fire Wave Sound',
     images: [
       {
-        url: 'https://www.firewavesound.com/og-board.jpg',
+        url: ogImage,
         width: 1200,
         height: 630,
         alt: 'Fire Wave Sound - Mixing and Mastering Savannah',
@@ -25,10 +30,10 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Mixing & Mastering in Savannah, GA | Fire Wave Sound',
     description: 'Professional mixing and mastering services in Savannah, GA. Get radio-ready mixes that translate on every platform.',
-    images: ['https://www.firewavesound.com/og-board.jpg'],
+    images: [ogImage],
   },
   alternates: {
-    canonical: 'https://www.firewavesound.com/mixing-mastering-savannah',
+    canonical,
   },
 }
 

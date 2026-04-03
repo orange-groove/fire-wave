@@ -1,6 +1,12 @@
 import { Metadata } from 'next'
 import Script from 'next/script'
 import RecordingCostContent from './RecordingCostContent'
+import { toAbsoluteCdnSrc } from '../../../lib/cloudflareImages'
+
+const baseUrl = 'https://www.firewavesound.com'
+const canonical = `${baseUrl}/blog/how-much-does-it-cost-to-record-a-song-savannah`
+const ogImage = toAbsoluteCdnSrc('/board.jpg', baseUrl)
+const publisherLogo = toAbsoluteCdnSrc('/logo.png', baseUrl)
 
 export const metadata: Metadata = {
   title: 'How Much Does It Cost to Record a Song in Savannah? | Fire Wave Sound',
@@ -9,11 +15,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'How Much Does It Cost to Record a Song in Savannah?',
     description: 'A realistic breakdown of recording studio costs in Savannah, GA—hourly rates, what affects pricing, and budget ranges.',
-    url: 'https://www.firewavesound.com/blog/how-much-does-it-cost-to-record-a-song-savannah',
+    url: canonical,
     siteName: 'Fire Wave Sound',
     images: [
       {
-        url: 'https://www.firewavesound.com/board.jpg',
+        url: ogImage,
         width: 1200,
         height: 630,
         alt: 'Recording studio mixing board at Fire Wave Sound',
@@ -28,10 +34,10 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'How Much Does It Cost to Record a Song in Savannah?',
     description: 'A realistic breakdown of recording studio costs in Savannah, GA.',
-    images: ['https://www.firewavesound.com/board.jpg'],
+    images: [ogImage],
   },
   alternates: {
-    canonical: 'https://www.firewavesound.com/blog/how-much-does-it-cost-to-record-a-song-savannah',
+    canonical,
   },
 }
 
@@ -40,25 +46,25 @@ const articleSchema = {
   '@type': 'BlogPosting',
   headline: 'How Much Does It Cost to Record a Song in Savannah?',
   description: 'A realistic breakdown of recording studio costs in Savannah, GA—hourly rates, what affects pricing, and budget ranges for singles, EPs, and albums.',
-  image: 'https://www.firewavesound.com/board.jpg',
+  image: ogImage,
   datePublished: '2025-02-04T00:00:00.000Z',
   dateModified: '2025-02-04T00:00:00.000Z',
   author: {
     '@type': 'Organization',
     name: 'Fire Wave Sound',
-    url: 'https://www.firewavesound.com',
+    url: baseUrl,
   },
   publisher: {
     '@type': 'Organization',
     name: 'Fire Wave Sound',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://www.firewavesound.com/logo.png',
+      url: publisherLogo,
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://www.firewavesound.com/blog/how-much-does-it-cost-to-record-a-song-savannah',
+    '@id': canonical,
   },
 }
 

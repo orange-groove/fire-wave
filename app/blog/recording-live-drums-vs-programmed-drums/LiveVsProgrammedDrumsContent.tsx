@@ -17,6 +17,7 @@ import Link from 'next/link'
 import BlogHeader from '../../../components/BlogHeader'
 import Reveal from '../../../components/Reveal'
 import Footer from '../../../components/Footer'
+import { toCdnSrc } from '../../../lib/cloudflareImages'
 
 export default function LiveVsProgrammedDrumsContent() {
   return (
@@ -39,7 +40,7 @@ export default function LiveVsProgrammedDrumsContent() {
               bg="#141414"
             >
               <img
-                src="/drums.jpg"
+                src={toCdnSrc('/drums.jpg')}
                 alt="Live drum setup at Fire Wave Sound"
                 style={{
                   width: '100%',
