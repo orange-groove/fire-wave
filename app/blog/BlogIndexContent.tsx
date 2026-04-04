@@ -23,6 +23,14 @@ const posts = [
     image: '/drums.jpg',
   },
   {
+    slug: 'recording-sipid-at-fire-wave-sound',
+    title: 'Recording Sipid at Fire Wave Sound',
+    excerpt:
+      'We had a great session with Sipid at Fire Wave Sound, building their song from a scratch track to a fully layered recording with click-tight performances, amp capture through a Two Notes Torpedo, and stacked vocals.',
+    date: 'April 3, 2026',
+    image: '/sipid_30.jpg',
+  },
+  {
     slug: 'how-long-does-it-take-to-record-a-song',
     title: 'How Long Does It Take to Record a Song?',
     excerpt: 'A realistic timeline for tracking, vocals, editing, mixing, and mastering—plus what speeds sessions up (and what slows them down).',
@@ -62,7 +70,7 @@ const posts = [
     title: 'Recording Delta Circle at Fire Wave Sound',
     excerpt: 'How we built Delta Circle\'s record from a live scratch take—keeping the energy while layering guitars, bass, and vocals.',
     date: 'February 4, 2025',
-    image: '/artists/delta-circle/delta-circle-1.jpeg',
+    image: '/delta-circle-1.jpeg',
   },
 ]
 

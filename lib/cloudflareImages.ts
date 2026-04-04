@@ -4,6 +4,12 @@ function trimTrailingSlash(value: string) {
   return value.endsWith('/') ? value.slice(0, -1) : value
 }
 
+function basenameFromPath(value: string) {
+  const cleaned = value.split('?')[0].split('#')[0]
+  const parts = cleaned.split('/')
+  return parts[parts.length - 1] || cleaned
+}
+
 function encodePathPreservingSlashes(value: string) {
   return value
     .split('/')
@@ -43,7 +49,15 @@ export function toCdnSrc(src: string): string {
   if (!baseUrl) return src
 
   const variant = getCloudflareImagesVariant()
-  const imageId = CF_PUBLIC_IMAGE_ID_MAP[src] ?? src.slice(1) // strip leading "/"
+  const baseKey = `/${basenameFromPath(src)}`
+  const lowerExactKey = src.toLowerCase()
+  const lowerBaseKey = baseKey.toLowerCase()
+  const imageId =
+    CF_PUBLIC_IMAGE_ID_MAP[src] ??
+    CF_PUBLIC_IMAGE_ID_MAP[baseKey] ??
+    CF_PUBLIC_IMAGE_ID_MAP[lowerExactKey] ??
+    CF_PUBLIC_IMAGE_ID_MAP[lowerBaseKey] ??
+    src.slice(1) // strip leading "/"
 
   return `${baseUrl}/${encodePathPreservingSlashes(imageId)}/${encodeURIComponent(variant)}`
 }

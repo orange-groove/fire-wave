@@ -5,7 +5,7 @@ import { toAbsoluteCdnSrc } from '../../../lib/cloudflareImages'
 
 const baseUrl = 'https://www.firewavesound.com'
 const canonical = `${baseUrl}/blog/recording-delta-circle-fire-wave-studio`
-const ogImage = toAbsoluteCdnSrc('/artists/delta-circle/delta-circle-1.jpeg', baseUrl)
+const ogImage = toAbsoluteCdnSrc('/delta-circle-1.jpeg', baseUrl)
 const publisherLogo = toAbsoluteCdnSrc('/logo.png', baseUrl)
 
 export const metadata: Metadata = {

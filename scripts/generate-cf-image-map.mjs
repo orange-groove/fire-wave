@@ -29,32 +29,6 @@ function loadEnvFromDotEnvLocal(repoRoot) {
   return parseDotEnv(content)
 }
 
-function listPublicFiles(repoRoot) {
-  const publicDir = path.join(repoRoot, 'public')
-  const results = []
-
-  const walk = (dir) => {
-    const entries = fs.readdirSync(dir, { withFileTypes: true })
-    for (const entry of entries) {
-      const full = path.join(dir, entry.name)
-      if (entry.isDirectory()) {
-        walk(full)
-        continue
-      }
-      if (!entry.isFile()) continue
-      const relFromPublic = path.relative(publicDir, full).replaceAll(path.sep, '/')
-      results.push(relFromPublic)
-    }
-  }
-
-  walk(publicDir)
-
-  // Filter to common image extensions (Cloudflare Images supports more, but keep tight)
-  return results
-    .filter((p) => /\.(png|jpe?g|webp|gif|svg)$/i.test(p))
-    .sort()
-}
-
 function listReferencedImagePaths(repoRoot) {
   const roots = [
     path.join(repoRoot, 'app'),
@@ -77,6 +51,9 @@ function listReferencedImagePaths(repoRoot) {
       }
       if (!entry.isFile()) continue
       if (!/\.(tsx?|jsx?|json|mdx?)$/i.test(entry.name)) continue
+      // Skip generated map file and scripts (they contain example paths)
+      if (full.endsWith(path.join('lib', 'cloudflareImages.map.ts'))) continue
+      if (full.includes(`${path.sep}scripts${path.sep}`)) continue
       files.push(full)
     }
   }
@@ -170,28 +147,27 @@ function normalizeFilename(filename) {
     .replace(/^\//, '')
 }
 
+function basenameOnly(value) {
+  const cleaned = String(value).replaceAll('\\', '/')
+  const parts = cleaned.split('/')
+  return parts[parts.length - 1] || cleaned
+}
+
 function buildIndexByFilename(cfImages) {
-  const byFilename = new Map()
-  const byBasename = new Map()
+  const byFilenameLower = new Map()
 
   for (const img of cfImages) {
     const id = img?.id
     const filename = normalizeFilename(img?.filename)
     if (!id || !filename) continue
 
-    byFilename.set(filename, { id, filename })
-
-    const base = filename.split('/').pop()
-    if (!base) continue
-    const list = byBasename.get(base) ?? []
-    list.push({ id, filename })
-    byBasename.set(base, list)
+    byFilenameLower.set(filename.toLowerCase(), { id, filename })
   }
 
-  return { byFilename, byBasename }
+  return { byFilenameLower }
 }
 
-function renderMapTs({ mappings, unmatched, ambiguous }) {
+function renderMapTs({ mappings, missingInCloudflare, collisions }) {
   const lines = []
   lines.push('export const CF_PUBLIC_IMAGE_ID_MAP: Record<string, string> = {')
   for (const [publicPath, id] of Object.entries(mappings).sort(([a], [b]) => a.localeCompare(b))) {
@@ -200,26 +176,28 @@ function renderMapTs({ mappings, unmatched, ambiguous }) {
   lines.push('}')
   lines.push('')
 
-  if (unmatched.length || ambiguous.length) {
+  if ((collisions && collisions.length) || (missingInCloudflare && missingInCloudflare.length)) {
     lines.push('/*')
-    if (unmatched.length) {
-      lines.push('Unmatched local images (not found in Cloudflare Images list):')
-      for (const p of unmatched) lines.push(`- ${p}`)
-      lines.push('')
-    }
-    if (ambiguous.length) {
-      lines.push('Ambiguous matches (multiple Cloudflare images share the same basename):')
-      for (const item of ambiguous) {
-        lines.push(`- ${item.publicPath}`)
-        for (const opt of item.options) lines.push(`  - ${opt.filename} -> ${opt.id}`)
+    if (collisions && collisions.length) {
+      lines.push('Basename collisions (same "/filename.ext" maps to different Cloudflare IDs):')
+      for (const c of collisions) {
+        lines.push(`- ${c.key}`)
+        lines.push(`  - existing: ${c.existing}`)
+        lines.push(`  - next:     ${c.next}`)
+        lines.push(`  - from:     ${c.from}`)
       }
       lines.push('')
     }
+    if (missingInCloudflare && missingInCloudflare.length) {
+      lines.push('Referenced images not found in Cloudflare Images (by filename):')
+      for (const p of missingInCloudflare) lines.push(`- ${p}`)
+      lines.push('')
+    }
     lines.push(
-      'To resolve these, either re-upload with custom IDs that match your public paths,',
+      'To resolve these, upload the missing files to Cloudflare Images using the same filename,',
     )
     lines.push(
-      'or manually add entries here mapping "/path/in/public.jpg" -> "<cloudflare-image-id>".',
+      'or manually add entries here mapping "/filename.ext" -> "<cloudflare-image-id>".',
     )
     lines.push('*/')
     lines.push('')
@@ -260,65 +238,47 @@ async function main() {
     process.exit(1)
   }
 
-  const publicFiles = listPublicFiles(repoRoot)
   const referencedPaths = listReferencedImagePaths(repoRoot)
 
-  const desiredPublicPaths = new Set()
-  for (const rel of publicFiles) desiredPublicPaths.add(`/${rel}`)
-  for (const p of referencedPaths) desiredPublicPaths.add(p)
-
-  if (!desiredPublicPaths.size) {
-    console.error('No image paths found (public/ is empty and no references found)')
-    process.exit(1)
-  }
-
   const cfImages = await cfListImages({ accountId, apiToken })
-  const { byFilename, byBasename } = buildIndexByFilename(cfImages)
+  const { byFilenameLower } = buildIndexByFilename(cfImages)
 
   const mappings = {}
-  const unmatched = []
-  const ambiguous = []
+  const collisions = []
 
-  for (const publicPath of Array.from(desiredPublicPaths).sort()) {
-    const rel = publicPath.startsWith('/') ? publicPath.slice(1) : publicPath
-    const direct = byFilename.get(rel)
-    if (direct) {
-      mappings[publicPath] = direct.id
+  // Map *all* Cloudflare Images by basename (lowercased) so you don't need local `public/`.
+  for (const img of cfImages) {
+    const id = img?.id
+    const filename = normalizeFilename(img?.filename)
+    if (!id || !filename) continue
+    const key = `/${basenameOnly(filename).toLowerCase()}`
+    if (mappings[key] && mappings[key] !== id) {
+      collisions.push({ key, existing: mappings[key], next: id, from: filename })
       continue
     }
+    mappings[key] = id
+  }
 
-    const base = rel.split('/').pop()
-    const options = base ? byBasename.get(base) : null
-    if (!options || options.length === 0) {
-      unmatched.push(publicPath)
-      continue
-    }
-
-    if (options.length === 1) {
-      mappings[publicPath] = options[0].id
-      continue
-    }
-
-    // If multiple Cloudflare images share the same basename, pick a stable default
-    // so the site can run, but keep a note so you can dedupe/rename later.
-    const sorted = [...options].sort((a, b) => String(a.id).localeCompare(String(b.id)))
-    mappings[publicPath] = sorted[0].id
-    ambiguous.push({ publicPath, options: sorted })
+  // Report referenced image paths whose *basename* isn't present in Cloudflare.
+  const missingInCloudflare = []
+  for (const refPath of referencedPaths) {
+    const key = `/${basenameOnly(refPath).toLowerCase()}`
+    if (!mappings[key]) missingInCloudflare.push(refPath)
   }
 
   const outPath = path.join(repoRoot, 'lib', 'cloudflareImages.map.ts')
-  const content = renderMapTs({ mappings, unmatched, ambiguous })
+  const content = renderMapTs({ mappings, missingInCloudflare, collisions })
   fs.writeFileSync(outPath, content, 'utf8')
 
   const summary = [
     `Wrote ${outPath}`,
     `Mapped: ${Object.keys(mappings).length}`,
-    `Unmatched: ${unmatched.length}`,
-    `Ambiguous: ${ambiguous.length}`,
+    `MissingInCF: ${missingInCloudflare.length}`,
+    `Collisions: ${collisions.length}`,
   ].join(' | ')
   console.log(summary)
 
-  if (unmatched.length || ambiguous.length) {
+  if (missingInCloudflare.length || collisions.length) {
     console.log('')
     console.log('Some images need manual intervention. Open lib/cloudflareImages.map.ts for details.')
   }
