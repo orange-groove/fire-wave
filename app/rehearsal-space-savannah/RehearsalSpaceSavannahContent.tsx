@@ -46,10 +46,15 @@ const benefits = [
   },
 ]
 
-const rehearsalImages: CarouselImage[] = Array.from({ length: 12 }, (_, idx) => ({
-  src: `/rehearsal-${idx + 1}.png`,
-  alt: `Rehearsal space photo ${idx + 1}`,
-}))
+const rehearsalImages: CarouselImage[] = [
+  { src: '/rehearsal-1.png', alt: 'Rehearsal space photo 1' },
+  { src: '/rehearsal-2.png', alt: 'Rehearsal space photo 2' },
+  { src: '/rehearsal-3.png', alt: 'Rehearsal space photo 3' },
+  { src: '/rehearsal-4.png', alt: 'Rehearsal space photo 4' },
+  { src: '/rehearsal-5.png', alt: 'Rehearsal space photo 5' },
+  { src: '/rehearsal-6.png', alt: 'Rehearsal space photo 6' },
+  { src: '/rehearsal-7.png', alt: 'Rehearsal space photo 7' },
+]
 
 const faqs = [
   {
