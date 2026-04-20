@@ -6,6 +6,7 @@ import Hero from '../components/Hero'
 
 // Lazy-load below-the-fold sections to reduce initial JS bundle
 const ProofSection = dynamic(() => import('../components/ProofSection'), { ssr: false })
+const GoogleReviewsSection = dynamic(() => import('../components/GoogleReviewsSection'), { ssr: false })
 const About = dynamic(() => import('../components/About'), { ssr: false })
 const Services = dynamic(() => import('../components/Services'), { ssr: false })
 // const ArtistsSection = dynamic(() => import('../components/ArtistsSection'), { ssr: false })
@@ -20,6 +21,7 @@ export default function Home() {
     <Box bg="#0a0a0a">
       <Hero />
       <ProofSection />
+      <GoogleReviewsSection />
       <About />
       <Services />
       {/* <ArtistsSection /> */}
