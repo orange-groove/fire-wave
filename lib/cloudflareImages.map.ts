@@ -17,6 +17,7 @@ export const CF_PUBLIC_IMAGE_ID_MAP: Record<string, string> = {
   "/drums.jpg": "032a2b18-af00-4cc6-8285-9b2d7b70ad00",
   "/guitars.jpg": "a5dce236-2931-4ae8-fd98-cc6131a35200",
   "/hero-bg.jpg": "f219e140-9450-4f08-53e7-a5d1409e5800",
+  "/live-1.jpg": "43cb7c52-8110-4624-ba8b-d6cf9f5f1400",
   "/logo.png": "3418fdf6-3562-4d0f-4733-bb2eda09b700",
   "/mic.jpg": "42f8321d-d348-47c8-9d6b-f25fb27bbd00",
   "/rehearsal-1.png": "ca37ffe8-b148-4bfe-30ae-9d1193858100",

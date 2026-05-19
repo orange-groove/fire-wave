@@ -16,6 +16,7 @@ import {
 } from '@chakra-ui/react'
 import { FaCheckCircle } from 'react-icons/fa'
 import Reveal from './Reveal'
+import { toCdnSrc } from '../lib/cloudflareImages'
 
 interface Package {
   title: string
@@ -119,6 +120,34 @@ export default function LiveSound() {
                 Professional live audio services for events and corporate functions throughout Savannah, and Coastal Georgia.
               </Text>
             </VStack>
+
+            {/* Feature Image */}
+            <Box
+              w="full"
+              position="relative"
+              rounded="lg"
+              overflow="hidden"
+              h={{ base: '240px', md: '380px', lg: '460px' }}
+              border="1px solid"
+              borderColor="gray.800"
+              boxShadow="0 12px 32px rgba(0, 0, 0, 0.4)"
+            >
+              <img
+                src={toCdnSrc('/live-1.jpg')}
+                alt="Fire Wave live sound engineer mixing at a Savannah event"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                }}
+              />
+              <Box
+                position="absolute"
+                inset={0}
+                bg="linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(0,0,0,0.55) 100%)"
+                pointerEvents="none"
+              />
+            </Box>
 
             {/* Packages */}
             <SimpleGrid columns={{ base: 1, lg: 3 }} spacing={8} w="full">
